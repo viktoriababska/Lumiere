@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+
+<html lang="uk">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Lumiere — український бренд одягу з персональним підбором розміру" name="description"/>
+<title>
+   Каталог — Lumiere
+  </title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Montserrat:wght@300;400&amp;family=Raleway:wght@300;400;500;600;700&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/><noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Montserrat:wght@300;400&amp;family=Raleway:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/></noscript>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" media="print" onload="this.media='all'" rel="stylesheet"/><noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/></noscript>
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/tailwind-components.css" rel="stylesheet"/>
+<script defer="" src="js/app.js">
+</script>
+</head>
+<body>
+<div class="announcement">
+   Безкоштовна консультація з підбору розміру
+   <button class="text-link" data-open="advisor">
+    Спробувати Size Advisor ↗
+   </button>
+</div>
+<header class="site-header">
+<div class="header-container">
+<button aria-expanded="false" aria-label="Відкрити меню" class="mobile-menu-toggle">
+<i class="fa-solid fa-bars">
+</i>
+</button>
+<a aria-label="Lumiere — головна" class="logo" href="index.html">
+<img alt="Логотип Lumiere — літера L" class="logo-img" src="assets/icons/logo.svg"/>
+<span class="logo-wordmark">
+      LUMIERE
+     </span>
+</a>
+<form class="header-search">
+<input aria-label="Пошук товарів" id="site-search" placeholder="Пошук суконь..." type="search"/>
+<button aria-label="Шукати">
+<i class="fa-solid fa-magnifying-glass">
+</i>
+</button>
+</form>
+<nav class="main-nav">
+<a class="nav-link" href="index.html">
+      Головна
+     </a>
+<a class="nav-link active" href="catalog.html">
+      Каталог
+     </a>
+<a class="nav-link" href="about.html">
+      Про нас
+     </a>
+<button class="nav-link" data-open="contacts">
+      Контакти
+     </button>
+</nav>
+<div class="header-actions">
+<a aria-label="Особистий кабінет" class="interactive-icon" href="account.html">
+<i class="fa-regular fa-user">
+</i>
+</a>
+<button aria-label="Обране" class="interactive-icon" data-open="favorites">
+<i class="fa-regular fa-heart">
+</i>
+<span class="cart-badge favorites-badge is-hidden">
+       0
+      </span>
+</button>
+<button aria-label="Кошик" class="interactive-icon" data-open="cart">
+<i class="fa-solid fa-bag-shopping">
+</i>
+<span class="cart-badge is-hidden" id="cart-badge">
+       0
+      </span>
+</button>
+</div>
+</div>
+</header>
+<main>
+<section class="page-hero catalog-page-hero">
+<div class="container">
+<div class="breadcrumbs">
+<a href="index.html">
+       Головна
+      </a>
+<span>
+       /
+      </span>
+<span>
+       Каталог
+      </span>
+</div>
+<span class="section-tag">
+      КОЛЕКЦІЯ LUMIERE
+     </span>
+<h1>
+      Каталог суконь
+     </h1>
+<p>
+      Речі для моментів, які хочеться запам’ятати.
+     </p>
+</div>
+</section>
+<section class="catalog-page-section">
+<div class="container catalog-layout">
+<aside class="filters-panel">
+<div class="filters-heading">
+<h2>
+        Фільтри
+       </h2>
+<button class="text-link" id="clear-filters">
+        Скинути
+       </button>
+</div>
+<div class="filter-group">
+<h3>
+        Категорія
+       </h3>
+<label>
+<input name="category" type="checkbox" value="dress"/>
+        Сукні
+       </label>
+<label>
+<input name="category" type="checkbox" value="set"/>
+        Комплекти
+       </label>
+<label>
+<input name="category" type="checkbox" value="evening"/>
+        Вечірні
+       </label>
+</div>
+<div class="filter-group">
+<h3>
+        Розмір
+       </h3>
+<div class="filter-size-list">
+<label>
+<input name="size" type="checkbox" value="XS"/>
+<span>
+          XS
+         </span>
+</label>
+<label>
+<input name="size" type="checkbox" value="S"/>
+<span>
+          S
+         </span>
+</label>
+<label>
+<input name="size" type="checkbox" value="M"/>
+<span>
+          M
+         </span>
+</label>
+<label>
+<input name="size" type="checkbox" value="L"/>
+<span>
+          L
+         </span>
+</label>
+<label>
+<input name="size" type="checkbox" value="XL"/>
+<span>
+          XL
+         </span>
+</label>
+</div>
+<button class="text-link" data-open="advisor">
+        Не знаєте розмір? Підкажемо ↗
+       </button>
+</div>
+<div class="filter-group">
+<h3>
+        Ціна
+       </h3>
+<label class="range-label">
+        До
+        <strong id="price-value">
+         8 000 ₴
+        </strong>
+</label>
+<input id="price-range" max="10000" min="3000" step="100" type="range" value="8000"/>
+</div>
+<div class="filter-group">
+<h3>
+        Колір
+       </h3>
+<div class="color-filters">
+<label title="Чорний">
+<input name="color" type="checkbox" value="black"/>
+<span class="swatch swatch-black">
+</span>
+</label>
+<label title="Молочний">
+<input name="color" type="checkbox" value="cream"/>
+<span class="swatch swatch-cream">
+</span>
+</label>
+<label title="Шоколад">
+<input name="color" type="checkbox" value="brown"/>
+<span class="swatch swatch-brown">
+</span>
+</label>
+</div>
+</div>
+</aside>
+<div class="catalog-results">
+<div class="catalog-results-top">
+<div>
+<span class="results-count" id="results-count">
+         6 моделей
+        </span>
+<p>
+         Знайдіть ту саму річ
+        </p>
+</div>
+<label class="sort-control">
+        Сортувати
+        <select id="sort-products">
+<option value="featured">
+          За популярністю
+         </option>
+<option value="price-asc">
+          Спочатку дешевші
+         </option>
+<option value="price-desc">
+          Спочатку дорожчі
+         </option>
+<option value="name">
+          За назвою
+         </option>
+</select>
+</label>
+</div>
+<div class="products-grid catalog-products">
+<article class="product-card" data-category="set" data-color="brown" data-price="7800" data-product="adelie" data-sizes="S M L">
+<div class="product-image-box">
+<img alt="Костюм ADELIE" loading="lazy" src="assets/images/dress-adelie.jpg"/>
+<span class="product-label">
+          Бестселер
+         </span>
+<button aria-label="Додати Костюм ADELIE в обране" class="favorite-toggle" data-favorite="adelie">
+<i class="fa-regular fa-heart">
+</i>
+</button>
+<button class="quick-view" data-quickview="adelie">
+          Швидкий перегляд
+         </button>
+</div>
+<div class="product-info">
+<div class="product-title-row">
+<h3>
+           Костюм ADELIE
+          </h3>
+<span class="price">
+           7 800 ₴
+          </span>
+</div>
+<p class="product-subtitle">
+          Шоколад · комплект
+         </p>
+<div class="product-footer">
+<button class="btn-text-buy" data-add="adelie">
+           Обрати розмір · В кошик
+          </button>
+</div>
+</div>
+</article>
+<article class="product-card" data-category="dress" data-color="cream" data-price="4800" data-product="elizabeth" data-sizes="XS S M L">
+<div class="product-image-box">
+<img alt="Сукня ELIZABETH" loading="lazy" src="assets/images/dress-elizabeth.jpg"/>
+<button aria-label="Додати Сукня ELIZABETH в обране" class="favorite-toggle" data-favorite="elizabeth">
+<i class="fa-regular fa-heart">
+</i>
+</button>
+<button class="quick-view" data-quickview="elizabeth">
+          Швидкий перегляд
+         </button>
+</div>
+<div class="product-info">
+<div class="product-title-row">
+<h3>
+           Сукня ELIZABETH
+          </h3>
+<span class="price">
+           4 800 ₴
+          </span>
+</div>
+<p class="product-subtitle">
+          Молочний · романтична
+         </p>
+<div class="product-footer">
+<button class="btn-text-buy" data-add="elizabeth">
+           Обрати розмір · В кошик
+          </button>
+</div>
+</div>
+</article>
+<article class="product-card" data-category="dress evening" data-color="black" data-price="5100" data-product="amour" data-sizes="XS S M L">
+<div class="product-image-box">
+<img alt="Сукня AMOUR" loading="lazy" src="assets/images/dress-amour.jpg"/>
+<span class="product-label">
+          Нова колекція
+         </span>
+<button aria-label="Додати Сукня AMOUR в обране" class="favorite-toggle" data-favorite="amour">
+<i class="fa-regular fa-heart">
+</i>
+</button>
+<button class="quick-view" data-quickview="amour">
+          Швидкий перегляд
+         </button>
+</div>
+<div class="product-info">
+<div class="product-title-row">
+<h3>
+           Сукня AMOUR
+          </h3>
+<span class="price">
+           5 100 ₴
+          </span>
+</div>
+<p class="product-subtitle">
+          Чорний · вечірня
+         </p>
+<div class="product-footer">
+<button class="btn-text-buy" data-add="amour">
+           Обрати розмір · В кошик
+          </button>
+</div>
+</div>
+</article>
+<article class="product-card" data-category="dress evening" data-color="cream" data-price="5700" data-product="emanuela" data-sizes="XS S M L XL">
+<div class="product-image-box">
+<img alt="Сукня EMANUELA" loading="lazy" src="assets/images/dress-emanuela.jpg"/>
+<button aria-label="Додати Сукня EMANUELA в обране" class="favorite-toggle" data-favorite="emanuela">
+<i class="fa-regular fa-heart">
+</i>
+</button>
+<button class="quick-view" data-quickview="emanuela">
+          Швидкий перегляд
+         </button>
+</div>
+<div class="product-info">
+<div class="product-title-row">
+<h3>
+           Сукня EMANUELA
+          </h3>
+<span class="price">
+           5 700 ₴
+          </span>
+</div>
+<p class="product-subtitle">
+          Молочний · святкова
+         </p>
+<div class="product-footer">
+<button class="btn-text-buy" data-add="emanuela">
+           Обрати розмір · В кошик
+          </button>
+</div>
+</div>
+</article>
+<article class="product-card" data-category="dress" data-color="cream" data-price="3600" data-product="antibes" data-sizes="XS S M">
+<div class="product-image-box">
+<img alt="Сукня ANTIBES" loading="lazy" src="assets/images/dress-antibes.jpg"/>
+<button aria-label="Додати Сукня ANTIBES в обране" class="favorite-toggle" data-favorite="antibes">
+<i class="fa-regular fa-heart">
+</i>
+</button>
+<button class="quick-view" data-quickview="antibes">
+          Швидкий перегляд
+         </button>
+</div>
+<div class="product-info">
+<div class="product-title-row">
+<h3>
+           Сукня ANTIBES
+          </h3>
+<span class="price">
+           3 600 ₴
+          </span>
+</div>
+<p class="product-subtitle">
+          Молочний · мінімалізм
+         </p>
+<div class="product-footer">
+<button class="btn-text-buy" data-add="antibes">
+           Обрати розмір · В кошик
+          </button>
+</div>
+</div>
+</article>
+<article class="product-card" data-category="dress evening" data-color="black" data-price="4300" data-product="francesca" data-sizes="XS S M L">
+<div class="product-image-box">
+<img alt="Сукня FRANCESCA" loading="lazy" src="assets/images/dress-francesca.jpg"/>
+<button aria-label="Додати Сукня FRANCESCA в обране" class="favorite-toggle" data-favorite="francesca">
+<i class="fa-regular fa-heart">
+</i>
+</button>
+<button class="quick-view" data-quickview="francesca">
+          Швидкий перегляд
+         </button>
+</div>
+<div class="product-info">
+<div class="product-title-row">
+<h3>
+           Сукня FRANCESCA
+          </h3>
+<span class="price">
+           4 300 ₴
+          </span>
+</div>
+<p class="product-subtitle">
+          Чорний · лаконічна
+         </p>
+<div class="product-footer">
+<button class="btn-text-buy" data-add="francesca">
+           Обрати розмір · В кошик
+          </button>
+</div>
+</div>
+</article>
+</div>
+<div class="empty-state is-hidden" id="catalog-empty">
+<i class="fa-regular fa-face-meh">
+</i>
+<h3>
+        За цими параметрами нічого не знайшлося
+       </h3>
+<p>
+        Спробуйте змінити фільтри або скинути пошук.
+       </p>
+<button class="btn btn-dark" id="empty-reset">
+        Скинути фільтри
+       </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-main-row">
+<div class="footer-brand">
+<a class="footer-logo" href="index.html">
+       LUMIERE
+      </a>
+<p>
+       Елегантність у деталях. Створено в Україні.
+      </p>
+</div>
+<div class="footer-links">
+<h3>
+       Навігація
+      </h3>
+<a href="index.html">
+       Головна
+      </a>
+<a href="catalog.html">
+       Каталог
+      </a>
+<a href="about.html">
+       Про нас
+      </a>
+<a href="account.html">
+       Мій акаунт
+      </a>
+</div>
+<div class="footer-links">
+<h3>
+       Допомога
+      </h3>
+<button data-open="advisor">
+       Size Advisor
+      </button>
+<button data-open="contacts">
+       Контакти
+      </button>
+<a href="https://dp.dpss.gov.ua/news/osnovni-pravila-shchodo-obminu-tovaru-ta-povernennya-groshej" rel="noopener noreferrer" target="_blank">
+       Доставка та повернення
+      </a>
+<a href="https://zakon.rada.gov.ua/laws/term/13397" rel="noopener noreferrer" target="_blank">Політика конфіденційності</a>
+<button data-open="cart">
+       Кошик (
+       <span class="footer-cart-count">
+        0
+       </span>
+       )
+      </button>
+</div>
+<div class="footer-contact">
+<h3>
+       Залишаймося на зв’язку
+      </h3>
+<p>
+       Є питання? Ми допоможемо.
+      </p>
+<button class="footer-contact-link" data-open="contacts">
+       Написати нам ↗
+      </button>
+<div class="social-links">
+<a aria-label="Instagram @vergenth (відкриється в новій вкладці)" href="https://www.instagram.com/vergenth/" rel="noopener noreferrer" target="_blank">
+<i class="fa-brands fa-instagram">
+</i>
+</a>
+<a aria-label="Відкрити Pinterest у новій вкладці" href="https://www.pinterest.com/" rel="noopener noreferrer" target="_blank">
+<i class="fa-brands fa-pinterest-p">
+</i>
+</a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<span>
+      © 2026 Lumiere. Усі права захищено.
+     </span>
+<div>
+<a href="https://zakon.rada.gov.ua/laws/term/13397" rel="noopener noreferrer" target="_blank">Про захист персональних даних</a>
+<a href="https://dp.dpss.gov.ua/news/osnovni-pravila-shchodo-obminu-tovaru-ta-povernennya-groshej" rel="noopener noreferrer" target="_blank">Правила обміну та повернення</a>
+</div>
+<span>
+      Made with care in Ukraine
+     </span>
+</div>
+</div>
+</footer>
+<div id="app-modal-root">
+</div>
+<div aria-atomic="true" aria-live="polite" class="toast-region">
+</div>
+</body>
+</html>

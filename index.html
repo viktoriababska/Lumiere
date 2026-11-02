@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+
+<html lang="uk">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Lumiere — український бренд одягу з персональним підбором розміру" name="description"/>
+<title>
+   Lumiere — Елегантні сукні. Ваш точний розмір
+  </title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Montserrat:wght@300;400&amp;family=Raleway:wght@300;400;500;600;700&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/><noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Montserrat:wght@300;400&amp;family=Raleway:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/></noscript>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" media="print" onload="this.media='all'" rel="stylesheet"/><noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/></noscript>
+<link as="image" fetchpriority="high" href="assets/images/hero-model.jpg" rel="preload"/><link href="css/style.css" rel="stylesheet"/>
+<link href="css/tailwind-components.css" rel="stylesheet"/>
+<script defer="" src="js/app.js">
+</script>
+</head>
+<body>
+<div class="announcement">
+   Безкоштовна консультація з підбору розміру
+   <button class="text-link" data-open="advisor">
+    Спробувати Size Advisor ↗
+   </button>
+</div>
+<header class="site-header">
+<div class="header-container">
+<button aria-expanded="false" aria-label="Відкрити меню" class="mobile-menu-toggle">
+<i class="fa-solid fa-bars">
+</i>
+</button>
+<a aria-label="Lumiere — головна" class="logo" href="index.html">
+<img alt="Логотип Lumiere — літера L" class="logo-img" src="assets/icons/logo.svg"/>
+<span class="logo-wordmark">
+      LUMIERE
+     </span>
+</a>
+<form class="header-search">
+<input aria-label="Пошук товарів" id="site-search" placeholder="Пошук суконь..." type="search"/>
+<button aria-label="Шукати">
+<i class="fa-solid fa-magnifying-glass">
+</i>
+</button>
+</form>
+<nav class="main-nav">
+<a class="nav-link active" href="index.html">
+      Головна
+     </a>
+<a class="nav-link" href="catalog.html">
+      Каталог
+     </a>
+<a class="nav-link" href="about.html">
+      Про нас
+     </a>
+<button class="nav-link" data-open="contacts">
+      Контакти
+     </button>
+</nav>
+<div class="header-actions">
+<a aria-label="Особистий кабінет" class="interactive-icon" href="account.html">
+<i class="fa-regular fa-user">
+</i>
+</a>
+<button aria-label="Обране" class="interactive-icon" data-open="favorites">
+<i class="fa-regular fa-heart">
+</i>
+<span class="cart-badge favorites-badge is-hidden">
+       0
+      </span>
+</button>
+<button aria-label="Кошик" class="interactive-icon" data-open="cart">
+<i class="fa-solid fa-bag-shopping">
+</i>
+<span class="cart-badge is-hidden" id="cart-badge">
+       0
+      </span>
+</button>
+</div>
+</div>
+</header>
+<main>
+<section class="hero-section">
+<div class="container hero-container">
+<div class="hero-content">
+<span class="eyebrow">
+       LUMIERE · MADE IN UKRAINE
+      </span>
+<h1 class="hero-title">
+       Елегантні сукні.
+       <br/>
+       Ваш точний розмір
+       <br/>
+       без примірок.
+      </h1>
+<p class="hero-desc">
+       Поєднуємо витончений дизайн, якісні тканини та технологічний підбір розміру для вашого комфорту.
+      </p>
+<div class="hero-actions">
+<a class="btn btn-dark" href="catalog.html">
+        Дивитись колекцію ↗
+       </a>
+<button class="btn btn-quiet" data-open="advisor">
+        Знайти свій розмір
+       </button>
+</div>
+<div class="hero-note">
+<span class="note-line">
+</span>
+<span>
+        Створено з турботою в Україні
+       </span>
+</div>
+</div>
+</div>
+</section>
+<section class="advisor-banner">
+<div class="container advisor-container">
+<div class="advisor-mark">
+<span class="advisor-mark-icon">
+<i class="fa-solid fa-ruler-combined">
+</i>
+</span>
+<div>
+<span class="section-tag">
+        SIZE ADVISOR
+       </span>
+<h2>
+        Ваш розмір — без здогадок
+       </h2>
+<p>
+        Введіть свої мірки — ми підкажемо розмір для впевненої посадки.
+       </p>
+</div>
+</div>
+<button class="btn btn-dark" data-open="advisor">
+      Підібрати розмір ↗
+     </button>
+</div>
+</section>
+<section class="features-section section-pad">
+<div class="container">
+<div class="section-title-center">
+<span class="section-tag">
+       ПЕРЕВАГИ
+      </span>
+<h2>
+       Чому обирають Lumiere
+      </h2>
+<p>
+       Деталі, які відчуваються. Турбота, яку видно.
+      </p>
+</div>
+<div class="features-grid">
+<article class="feature-card" tabindex="0">
+<span class="feature-number">
+        01
+       </span>
+<figure aria-hidden="true" class="feature-icon">
+<img alt="" src="assets/icons/dress.svg"/>
+</figure>
+<h3>
+        Локальне виробництво
+       </h3>
+<p>
+        Кожна модель створюється в Україні з увагою до деталей.
+       </p>
+<a class="feature-more" href="about.html">
+        Наша історія ↗
+       </a>
+</article>
+<article class="feature-card" tabindex="0">
+<span class="feature-number">
+        02
+       </span>
+<figure aria-hidden="true" class="feature-icon">
+<img alt="" src="assets/icons/mannequin.svg"/>
+</figure>
+<h3>
+        Розмір, що підходить
+       </h3>
+<p>
+        Персональна рекомендація на основі ваших мірок і таблиці виробу.
+       </p>
+<button class="feature-more" data-open="advisor">
+        Спробувати ↗
+       </button>
+</article>
+<article class="feature-card" tabindex="0">
+<span class="feature-number">
+        03
+       </span>
+<figure aria-hidden="true" class="feature-icon">
+<img alt="" src="assets/icons/box.svg"/>
+</figure>
+<h3>
+        Просте повернення
+       </h3>
+<p>
+        Зрозумілі умови та підтримка, якщо покупка не виправдала очікувань.
+       </p>
+<a class="feature-more" href="https://dp.dpss.gov.ua/news/osnovni-pravila-shchodo-obminu-tovaru-ta-povernennya-groshej" rel="noopener noreferrer" target="_blank">
+        Дізнатись більше ↗
+       </a>
+</article>
+<article class="feature-card" tabindex="0">
+<span class="feature-number">
+        04
+       </span>
+<figure aria-hidden="true" class="feature-icon">
+<img alt="" src="assets/icons/tag.svg"/>
+</figure>
+<h3>
+        Тканини з характером
+       </h3>
+<p>
+        Приємні фактури, ретельно підібрані матеріали й довговічний дизайн.
+       </p>
+<a class="feature-more" href="about.html#materials">
+        Про матеріали ↗
+       </a>
+</article>
+</div>
+</div>
+</section>
+<section class="catalog-section section-pad">
+<div class="container">
+<div class="catalog-header">
+<div>
+<span class="section-tag">
+        ОБРАНЕ КЛІЄНТКАМИ
+       </span>
+<h2>
+        Популярні моделі
+       </h2>
+<p>
+        Ваші фаворити цього сезону.
+       </p>
+</div>
+<a class="link-more" href="catalog.html">
+       Увесь каталог ↗
+      </a>
+</div>
+<div class="products-grid">
+<article class="product-card" data-category="set" data-color="brown" data-price="7800" data-product="adelie" data-sizes="S M L">
+<div class="product-image-box">
+<img alt="Костюм ADELIE" loading="lazy" src="assets/images/dress-adelie.jpg"/>
+<span class="product-label">
+         Бестселер
+        </span>
+<button aria-label="Додати Костюм ADELIE в обране" class="favorite-toggle" data-favorite="adelie">
+<i class="fa-regular fa-heart">
+</i>
+</button>
+<button class="quick-view" data-quickview="adelie">
+         Швидкий перегляд
+        </button>
+</div>
+<div class="product-info">
+<div class="product-title-row">
+<h3>
+          Костюм ADELIE
+         </h3>
+<span class="price">
+          7 800 ₴
+         </span>
+</div>
+<p class="product-subtitle">
+         Шоколад · комплект
+        </p>
+<div class="product-footer">
+<button class="btn-text-buy" data-add="adelie">
+          Обрати розмір · В кошик
+         </button>
+</div>
+</div>
+</article>
+<article class="product-card" data-category="dress" data-color="cream" data-price="4800" data-product="elizabeth" data-sizes="XS S M L">
+<div class="product-image-box">
+<img alt="Сукня ELIZABETH" loading="lazy" src="assets/images/dress-elizabeth.jpg"/>
+<button aria-label="Додати Сукня ELIZABETH в обране" class="favorite-toggle" data-favorite="elizabeth">
+<i class="fa-regular fa-heart">
+</i>
+</button>
+<button class="quick-view" data-quickview="elizabeth">
+         Швидкий перегляд
+        </button>
+</div>
+<div class="product-info">
+<div class="product-title-row">
+<h3>
+          Сукня ELIZABETH
+         </h3>
+<span class="price">
+          4 800 ₴
+         </span>
+</div>
+<p class="product-subtitle">
+         Молочний · романтична
+        </p>
+<div class="product-footer">
+<button class="btn-text-buy" data-add="elizabeth">
+          Обрати розмір · В кошик
+         </button>
+</div>
+</div>
+</article>
+<article class="product-card" data-category="dress evening" data-color="black" data-price="5100" data-product="amour" data-sizes="XS S M L">
+<div class="product-image-box">
+<img alt="Сукня AMOUR" loading="lazy" src="assets/images/dress-amour.jpg"/>
+<span class="product-label">
+         Нова колекція
+        </span>
+<button aria-label="Додати Сукня AMOUR в обране" class="favorite-toggle" data-favorite="amour">
+<i class="fa-regular fa-heart">
+</i>
+</button>
+<button class="quick-view" data-quickview="amour">
+         Швидкий перегляд
+        </button>
+</div>
+<div class="product-info">
+<div class="product-title-row">
+<h3>
+          Сукня AMOUR
+         </h3>
+<span class="price">
+          5 100 ₴
+         </span>
+</div>
+<p class="product-subtitle">
+         Чорний · вечірня
+        </p>
+<div class="product-footer">
+<button class="btn-text-buy" data-add="amour">
+          Обрати розмір · В кошик
+         </button>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section class="quote-section">
+<div class="container quote-inner">
+<span class="quote-mark">
+      “
+     </span>
+<blockquote>
+      Одяг має не просто пасувати. Він має допомагати вам почуватися собою.
+     </blockquote>
+<span class="quote-credit">
+      ФІЛОСОФІЯ LUMIERE
+     </span>
+</div>
+</section>
+<section class="reviews-section section-pad">
+<div class="container">
+<div class="section-title-center">
+<span class="section-tag">
+       ВІДГУКИ
+      </span>
+<h2>
+       Слова, які надихають
+      </h2>
+<p>
+       Враження наших клієнток.
+      </p>
+</div>
+<div class="reviews-grid">
+<article class="review-card">
+<div class="stars">
+        ★★★★★
+       </div>
+<p>
+        «Сукня сіла ідеально, навіть не довелося підшивати поділ».
+       </p>
+<div class="review-author">
+<span class="avatar-placeholder">
+         ОК
+        </span>
+<div>
+<h3>
+          Олена Коваль
+         </h3>
+<span>
+          Покупка через Size Advisor
+         </span>
+</div>
+</div>
+</article>
+<article class="review-card">
+<div class="stars">
+        ★★★★★
+       </div>
+<p>
+        «Вперше замовила вечірню сукню онлайн без хвилювань».
+       </p>
+<div class="review-author">
+<span class="avatar-placeholder">
+         МШ
+        </span>
+<div>
+<h3>
+          Марія Шевченко
+         </h3>
+<span>
+          Клієнтка Lumiere
+         </span>
+</div>
+</div>
+</article>
+<article class="review-card">
+<div class="stars">
+        ★★★★★
+       </div>
+<p>
+        «Дуже красиве пакування й відчуття, що про тебе подбали».
+       </p>
+<div class="review-author">
+<span class="avatar-placeholder">
+         ІМ
+        </span>
+<div>
+<h3>
+          Ірина Мельник
+         </h3>
+<span>
+          Постійна клієнтка
+         </span>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section class="newsletter-section">
+<div class="container newsletter-inner">
+<div>
+<span class="section-tag">
+       ЛИСТИ ВІД LUMIERE
+      </span>
+<h2>
+       Трохи натхнення у вашій пошті
+      </h2>
+<p>
+       Нові колекції, поради щодо стилю та спеціальні пропозиції.
+      </p>
+</div>
+<form class="subscribe-form">
+<input aria-label="Ваша електронна пошта" placeholder="Ваша електронна пошта" required="" type="email"/>
+<button class="btn btn-dark">
+       Підписатися ↗
+      </button>
+</form>
+</div>
+</section><section aria-labelledby="media-title" class="lab7-media-section section-pad" id="media"><div class="container"><span class="section-tag">LUMIERE / INSPIRATION</span><h2 id="media-title">Відео та наша локація</h2><p class="lab7-media-intro">Погляньте на світ стилю ближче та знайдіть нас у самому серці Львова.</p><div class="lab7-media-grid grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-7"><article class="lab7-media-card lab7-video-card min-w-0"><div class="lab7-media-frame lab7-video-frame"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/GdgKk44Unmg" title="Відео про стиль та натхнення — Lumiere"></iframe></div><div class="lab7-media-body"><span class="lab7-eyebrow">LUMIERE / VIDEO</span><h3>Стиль у кожній деталі</h3><p>Відеонатхнення для тих, хто цінує естетику, деталі та особливу атмосферу моди.</p><a class="lab7-text-link" href="https://youtu.be/GdgKk44Unmg?si=dPSnXe7cyaOkA0IS" rel="noopener noreferrer" target="_blank">Переглянути на YouTube ↗</a></div></article><article class="lab7-media-card lab7-location-card min-w-0"><div class="lab7-media-frame lab7-map-frame"><iframe allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=%D0%93%D0%BE%D0%BB%D0%BE%D0%B2%D0%BD%D0%B8%D0%B9%20%D0%BA%D0%BE%D1%80%D0%BF%D1%83%D1%81%20%D0%9B%D1%8C%D0%B2%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%BE%D1%97%20%D0%BF%D0%BE%D0%BB%D1%96%D1%82%D0%B5%D1%85%D0%BD%D1%96%D0%BA%D0%B8%2C%20%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F%20%D0%A1%D1%82%D0%B5%D0%BF%D0%B0%D0%BD%D0%B0%20%D0%91%D0%B0%D0%BD%D0%B4%D0%B5%D1%80%D0%B8%2C%2012%2C%20%D0%9B%D1%8C%D0%B2%D1%96%D0%B2&amp;output=embed" title="Google Maps: Головний корпус Львівської політехніки, Львів, вул. Степана Бандери, 12"></iframe></div><div class="lab7-media-body"><span class="lab7-eyebrow">OUR LOCATION</span><h3>Завітайте до нас у Львові</h3><address>Головний корпус Львівської політехніки<br/>м. Львів, вул. Степана Бандери, 12</address><a class="lab7-text-link" href="https://www.google.com/maps/search/?api=1&amp;query=%D0%93%D0%BE%D0%BB%D0%BE%D0%B2%D0%BD%D0%B8%D0%B9%20%D0%BA%D0%BE%D1%80%D0%BF%D1%83%D1%81%20%D0%9B%D1%8C%D0%B2%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%BE%D1%97%20%D0%BF%D0%BE%D0%BB%D1%96%D1%82%D0%B5%D1%85%D0%BD%D1%96%D0%BA%D0%B8%2C%20%D0%A1%D1%82%D0%B5%D0%BF%D0%B0%D0%BD%D0%B0%20%D0%91%D0%B0%D0%BD%D0%B4%D0%B5%D1%80%D0%B8%2012%2C%20%D0%9B%D1%8C%D0%B2%D1%96%D0%B2" rel="noopener noreferrer" target="_blank">Прокласти маршрут у Google Maps ↗</a></div></article></div><aside class="lab7-instagram"><div><span class="section-tag">SOCIAL INSPIRATION</span><h3>Більше натхнення в Instagram</h3><p>Образи, деталі та естетика за кадром — у профілі <strong>@vergenth</strong>.</p></div><a aria-label="Відкрити Instagram @vergenth" class="btn btn-dark" href="https://www.instagram.com/vergenth/" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fa-brands fa-instagram"></i> Instagram @vergenth ↗</a></aside></div></section>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-main-row">
+<div class="footer-brand">
+<a class="footer-logo" href="index.html">
+       LUMIERE
+      </a>
+<p>
+       Елегантність у деталях. Створено в Україні.
+      </p>
+</div>
+<div class="footer-links">
+<h3>
+       Навігація
+      </h3>
+<a href="index.html">
+       Головна
+      </a>
+<a href="catalog.html">
+       Каталог
+      </a>
+<a href="about.html">
+       Про нас
+      </a>
+<a href="account.html">
+       Мій акаунт
+      </a>
+</div>
+<div class="footer-links">
+<h3>
+       Допомога
+      </h3>
+<button data-open="advisor">
+       Size Advisor
+      </button>
+<button data-open="contacts">
+       Контакти
+      </button>
+<a href="https://dp.dpss.gov.ua/news/osnovni-pravila-shchodo-obminu-tovaru-ta-povernennya-groshej" rel="noopener noreferrer" target="_blank">
+       Доставка та повернення
+      </a>
+<a href="https://zakon.rada.gov.ua/laws/term/13397" rel="noopener noreferrer" target="_blank">Політика конфіденційності</a>
+<button data-open="cart">
+       Кошик (
+       <span class="footer-cart-count">
+        0
+       </span>
+       )
+      </button>
+</div>
+<div class="footer-contact">
+<h3>
+       Залишаймося на зв’язку
+      </h3>
+<p>
+       Є питання? Ми допоможемо.
+      </p>
+<button class="footer-contact-link" data-open="contacts">
+       Написати нам ↗
+      </button>
+<div class="social-links">
+<a aria-label="Instagram @vergenth (відкриється в новій вкладці)" href="https://www.instagram.com/vergenth/" rel="noopener noreferrer" target="_blank">
+<i class="fa-brands fa-instagram">
+</i>
+</a>
+<a aria-label="Відкрити Pinterest у новій вкладці" href="https://www.pinterest.com/" rel="noopener noreferrer" target="_blank">
+<i class="fa-brands fa-pinterest-p">
+</i>
+</a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<span>
+      © 2026 Lumiere. Усі права захищено.
+     </span>
+<div>
+<a href="https://zakon.rada.gov.ua/laws/term/13397" rel="noopener noreferrer" target="_blank">Про захист персональних даних</a>
+<a href="https://dp.dpss.gov.ua/news/osnovni-pravila-shchodo-obminu-tovaru-ta-povernennya-groshej" rel="noopener noreferrer" target="_blank">Правила обміну та повернення</a>
+</div>
+<span>
+      Made with care in Ukraine
+     </span>
+</div>
+</div>
+</footer>
+<div id="app-modal-root">
+</div>
+<div aria-atomic="true" aria-live="polite" class="toast-region">
+</div>
+</body>
+</html>

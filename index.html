@@ -16,6 +16,7 @@
 <link href="css/tailwind-components.css" rel="stylesheet"/>
 <script defer="" src="js/app.js">
 </script>
+<script src="js/validation.js" defer></script>
 </head>
 <body>
 <div class="announcement">
@@ -53,9 +54,9 @@
 <a class="nav-link" href="about.html">
       Про нас
      </a>
-<button class="nav-link" data-open="contacts">
+<a class="nav-link" href="index.html#feedback">
       Контакти
-     </button>
+     </a>
 </nav>
 <div class="header-actions">
 <a aria-label="Особистий кабінет" class="interactive-icon" href="account.html">
@@ -434,6 +435,59 @@
 </div>
 </div>
 </section>
+
+<!-- LAB 9: accessible contact form with client-side validation (js/validation.js). -->
+<section class="feedback-section section-pad" id="feedback" aria-labelledby="feedback-title">
+  <div class="container feedback-layout grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-7">
+    <header class="feedback-intro min-w-0">
+      <span class="section-tag">LUMIERE / CONTACT</span>
+      <h2 id="feedback-title">Давайте залишатися на зв’язку</h2>
+      <p>Потрібна порада щодо розміру, замовлення чи вибору образу? Напишіть нам — ми раді допомогти.</p>
+      <div class="feedback-details">
+        <span class="feedback-detail-label">НАША ЛОКАЦІЯ</span>
+        <p>Львів, вул. Степана Бандери, 12</p>
+        <span class="feedback-detail-label">СОЦІАЛЬНІ МЕРЕЖІ</span>
+        <p><a href="https://www.instagram.com/vergenth/" target="_blank" rel="noopener noreferrer">Instagram @vergenth ↗</a></p>
+      </div>
+    </header>
+    <div class="feedback-panel min-w-0">
+      <h3>Напишіть нам</h3>
+      <p class="feedback-panel-intro">Заповніть усі поля, і ми зможемо розглянути ваше звернення.</p>
+      <form id="feedbackForm" class="feedback-form grid grid-cols-1 gap-6" novalidate>
+        <div class="feedback-fields grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="feedback-field min-w-0">
+            <label for="feedbackName">Ваше ім’я <span aria-hidden="true">*</span></label>
+            <input id="feedbackName" name="username" type="text" autocomplete="name" required minlength="2" maxlength="80" placeholder="Як до вас звертатися?" aria-describedby="feedbackNameError" aria-invalid="false" />
+            <p id="feedbackNameError" class="feedback-error" aria-live="polite"></p>
+          </div>
+          <div class="feedback-field min-w-0">
+            <label for="feedbackEmail">Електронна пошта <span aria-hidden="true">*</span></label>
+            <input id="feedbackEmail" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="name@example.com" aria-describedby="feedbackEmailError" aria-invalid="false" />
+            <p id="feedbackEmailError" class="feedback-error" aria-live="polite"></p>
+          </div>
+        </div>
+        <div class="feedback-field">
+          <label for="feedbackPhone">Номер телефону <span aria-hidden="true">*</span></label>
+          <input id="feedbackPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required pattern="\+380[0-9]{9}" placeholder="+380501234567" aria-describedby="feedbackPhoneHint feedbackPhoneError" aria-invalid="false" />
+          <p class="feedback-hint" id="feedbackPhoneHint">Формат: +380 і 9 цифр без пробілів.</p>
+          <p id="feedbackPhoneError" class="feedback-error" aria-live="polite"></p>
+        </div>
+        <div class="feedback-field">
+          <label for="feedbackMessage">Ваше повідомлення <span aria-hidden="true">*</span></label>
+          <textarea id="feedbackMessage" name="message" required minlength="10" maxlength="2000" rows="5" placeholder="Розкажіть, чим можемо допомогти…" aria-describedby="feedbackMessageError" aria-invalid="false"></textarea>
+          <p id="feedbackMessageError" class="feedback-error" aria-live="polite"></p>
+        </div>
+        <div class="feedback-agreement">
+          <input id="feedbackAgreement" name="agreement" type="checkbox" required aria-describedby="feedbackAgreementError" aria-invalid="false" />
+          <label for="feedbackAgreement">Я погоджуюся з <a href="https://zakon.rada.gov.ua/laws/term/13397" target="_blank" rel="noopener noreferrer">умовами захисту персональних даних</a> <span aria-hidden="true">*</span></label>
+          <p id="feedbackAgreementError" class="feedback-error" aria-live="polite"></p>
+        </div>
+        <button class="btn btn-dark feedback-submit" type="submit">Надіслати повідомлення ↗</button>
+        <p class="feedback-required">* Обов’язкові поля. Навчальна форма: дані не передаються на сервер.</p>
+      </form>
+    </div>
+  </div>
+</section>
 <section class="newsletter-section">
 <div class="container newsletter-inner">
 <div>
@@ -448,7 +502,7 @@
       </p>
 </div>
 <form class="subscribe-form">
-<input aria-label="Ваша електронна пошта" placeholder="Ваша електронна пошта" required="" type="email"/>
+<input aria-label="Ваша електронна пошта" id="newsletter-email" name="newsletter_email" autocomplete="email" placeholder="Ваша електронна пошта" required="" type="email"/>
 <button class="btn btn-dark">
        Підписатися ↗
       </button>
@@ -491,9 +545,9 @@
 <button data-open="advisor">
        Size Advisor
       </button>
-<button data-open="contacts">
+<a href="index.html#feedback">
        Контакти
-      </button>
+      </a>
 <a href="https://dp.dpss.gov.ua/news/osnovni-pravila-shchodo-obminu-tovaru-ta-povernennya-groshej" rel="noopener noreferrer" target="_blank">
        Доставка та повернення
       </a>
@@ -513,9 +567,9 @@
 <p>
        Є питання? Ми допоможемо.
       </p>
-<button class="footer-contact-link" data-open="contacts">
+<a class="footer-contact-link" href="index.html#feedback">
        Написати нам ↗
-      </button>
+      </a>
 <div class="social-links">
 <a aria-label="Instagram @vergenth (відкриється в новій вкладці)" href="https://www.instagram.com/vergenth/" rel="noopener noreferrer" target="_blank">
 <i class="fa-brands fa-instagram">
@@ -542,6 +596,17 @@
 </div>
 </div>
 </footer>
+<!-- LAB 9: native HTML dialog supports keyboard focus, Escape and focus trapping. -->
+<dialog id="feedbackSuccessDialog" class="feedback-success-dialog" aria-labelledby="feedbackDialogTitle" aria-describedby="feedbackDialogDescription">
+  <div class="feedback-dialog-content">
+    <span class="section-tag">LUMIERE / FEEDBACK</span>
+    <h2 id="feedbackDialogTitle">Дякуємо за звернення!</h2>
+    <p id="feedbackDialogDescription">Форма успішно пройшла клієнтську перевірку. Це демонстрація надсилання: повідомлення не було відправлено на сервер.</p>
+    <form method="dialog">
+      <button class="btn btn-dark feedback-dialog-close" type="submit">Зрозуміло, закрити</button>
+    </form>
+  </div>
+</dialog>
 <div id="app-modal-root">
 </div>
 <div aria-atomic="true" aria-live="polite" class="toast-region">

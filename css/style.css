@@ -3504,3 +3504,131 @@ body, button, input, textarea, select {
     width: calc(100% + 28px);
   }
 }
+
+/* Lumiere collection expansion: richer filters, faithful product photos, mobile ergonomics */
+.catalog-page-hero { padding-bottom: clamp(30px,5vw,65px); }
+.catalog-results { min-width: 0; }
+.catalog-products { align-items: stretch; }
+.catalog-products .product-card { min-width:0; }
+.catalog-products .product-title-row { align-items: start; gap:10px; flex-wrap:wrap; }
+.catalog-products .product-title-row .price { white-space:nowrap; }
+.catalog-products .product-title-row h3 { overflow-wrap:anywhere; }
+.catalog-products .product-subtitle { min-height: 1.5em; }
+.catalog-products .product-card.new-product .product-image-box { background:#f8f7f5; }
+.catalog-products .product-card.new-product .product-image-box>img { object-fit:contain; object-position:center; padding:clamp(9px,1.8vw,20px); background:#f8f7f5; }
+.catalog-products .product-card.new-product:hover .product-image-box>img { transform:scale(1.035); }
+.catalog-stock-note { margin:0 0 23px; color:var(--muted,#777); font-size:12px; line-height:1.6; }
+.filters-panel { align-self:start; }
+.filter-checks { display:grid; gap:11px; }
+.filters-panel .filter-group .filter-checks label { display:flex; align-items:center; gap:10px; cursor:pointer; font-size:13px; }
+.filters-panel input[type=checkbox] { accent-color:#222; }
+.filters-panel .filter-group { padding-block:19px; }
+.filters-panel .filter-group h3 { margin-bottom:14px; }
+.filter-helper { margin:10px 0 0; color:#857b74; font-size:11px; line-height:1.55; }
+.filters-panel .filter-size-list { flex-wrap:wrap; }
+.catalog-filter-toggle { display:none; align-items:center; gap:10px; padding:12px 16px; border:1px solid #d9d3ce; background:transparent; font:inherit; font-size:13px; color:inherit; cursor:pointer; }
+.catalog-filter-toggle:focus-visible { outline:2px solid #222; outline-offset:3px; }
+#active-filter-count { color:#9a7867; }
+.modal-quickview .quickview-image-wrap:has(img[src$=".webp"]) { background:#f8f7f5 !important; }
+.modal-quickview .quickview-image-wrap img[src$=".webp"] { object-fit:contain !important; padding:12px; }
+@media (max-width: 800px) {
+ .catalog-results-top { flex-wrap:wrap; gap:14px; }
+ .catalog-filter-toggle { display:inline-flex; }
+ .catalog-layout { display:flex; flex-direction:column; gap:20px; }
+ .filters-panel { display:none; width:100%; max-width:none; }
+ .filters-panel.filter-open { display:block; }
+ .catalog-results { width:100%; }
+}
+@media (max-width: 540px) {
+ .catalog-products { grid-template-columns: repeat(2,minmax(0,1fr)) !important; gap:12px !important; }
+ .catalog-products .product-title-row { display:block; }
+ .catalog-products .product-title-row h3 { font-size:13px; line-height:1.35; }
+ .catalog-products .product-title-row .price { display:block; margin-top:7px; font-size:13px; }
+ .catalog-products .product-subtitle { font-size:11px; }
+ .catalog-products .product-footer .btn-text-buy { font-size:11px; line-height:1.4; }
+ .catalog-products .product-image-box>img { padding:7px; }
+ .catalog-products .quick-view { font-size:11px; }
+ .catalog-results-top .sort-control { max-width:100%; }
+}
+
+/* Catalog refinement: source photos remain uncropped and filters scroll independently. */
+@media (min-width: 801px) {
+  .catalog-layout { grid-template-columns: minmax(225px, 250px) minmax(0, 1fr); gap: clamp(24px, 3vw, 44px); align-items: start; }
+  #catalog-filters.filters-panel {
+    position: sticky;
+    top: 112px;
+    max-height: calc(100dvh - 130px);
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    scrollbar-width: thin;
+    scrollbar-color: #c9bdb4 transparent;
+    align-self: start;
+  }
+}
+/* Original 2:3 dress photographs: no destructive crop or inset padding. */
+.catalog-products .product-image-box { aspect-ratio: 2 / 3; background: #fff; }
+.catalog-products .product-image-box > img,
+.catalog-products .product-card.new-product .product-image-box > img {
+  width: 100%; height: 100%; padding: 0 !important;
+  object-fit: contain !important; object-position: center center;
+  background: #fff;
+}
+.catalog-products .product-card:hover .product-image-box > img,
+.catalog-products .product-card.new-product:hover .product-image-box > img { transform: none; }
+.catalog-results-top { scroll-margin-top: 120px; }
+.filter-apply { display: none; border: 0; background: transparent; font: inherit; color: #82624f; font-size: 11px; cursor: pointer; }
+.filter-apply:focus-visible { outline: 2px solid #222; outline-offset: 3px; }
+@media (max-width: 800px) {
+  #catalog-filters.filters-panel {
+    position: relative;
+    top: auto;
+    max-height: min(68dvh, 580px);
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    scrollbar-width: thin;
+    scrollbar-color: #c9bdb4 transparent;
+  }
+  #catalog-filters .filters-heading {
+    position: sticky; top: -15px; z-index: 2; background: #fff;
+    gap: 12px; flex-wrap: wrap;
+  }
+  #catalog-filters .filter-apply { display: inline-flex; align-items: center; gap: 4px; margin-left: auto; }
+}
+@media (max-width: 540px) {
+  .catalog-products .product-image-box { aspect-ratio: 2 / 3; }
+  #catalog-filters.filters-panel { max-height: min(68dvh, 530px); }
+}
+
+/* About page: concise editorial explanation of the brand promise */
+.about-confidence { background:#f8f6f3; }
+.about-confidence-layout { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.1fr); gap:clamp(32px,6vw,100px); align-items:start; }
+.about-confidence-intro h2 { font:400 clamp(28px,3.3vw,46px)/1.16 var(--heading); letter-spacing:-.025em; margin:14px 0 20px; }
+.about-confidence-intro p { max-width:510px; line-height:1.85; color:#716a65; margin:0 0 25px; }
+.about-confidence-points article { display:flex; gap:22px; padding:22px 0; border-bottom:1px solid #ded8d2; }
+.about-confidence-points article:first-child { padding-top:0; }
+.about-confidence-points article>span { font-size:12px; color:#9b8071; padding-top:5px; }
+.about-confidence-points article h3 { font:500 18px var(--heading); margin:0 0 9px; }
+.about-confidence-points article p { margin:0; color:#716a65; font-size:14px; line-height:1.7; }
+@media(max-width:800px){.about-confidence-layout{grid-template-columns:1fr;gap:38px;}}
+/* Focus indicators for shopping and filter controls */
+#catalog-filters input:focus-visible, #sort-products:focus-visible, .quick-view:focus-visible, .btn-text-buy:focus-visible {outline:2px solid #78604d;outline-offset:3px;}
+
+#catalog-filters { scroll-margin-top:100px; }
+
+/* Final catalog refinements: clear size selection and live facet counts */
+#catalog-filters .filter-size-list {display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;}
+#catalog-filters .filter-size-list label {position:relative;display:flex;flex-direction:column;align-items:center;gap:3px;min-width:0;cursor:pointer;}
+#catalog-filters .filter-size-list label input {position:absolute;width:100%;height:100%;opacity:0;cursor:pointer;z-index:1;}
+#catalog-filters .filter-size-list .facet-name {display:grid;place-items:center;width:100%;min-width:0;height:39px;border:1px solid #cfc7c0;border-radius:3px;background:#fff;color:#302b29;font-size:13px;transition:background .14s,color .14s,border .14s;}
+#catalog-filters .filter-size-list label input:checked+.facet-name {background:#302b29;color:white;border-color:#302b29;}
+#catalog-filters .filter-size-list label input:focus-visible+.facet-name {outline:2px solid #8c6b55;outline-offset:2px;}
+#catalog-filters .facet-count {font-size:10px;color:#8e827a;min-width:1.2em;text-align:center;font-weight:400;}
+#catalog-filters .filter-checks .facet-count {margin-left:auto;}
+#catalog-filters .filter-checks .facet-name {flex:1;}
+#catalog-filters .facet-unavailable:not(:has(input:checked)) {opacity:.47;}
+.selected-filter-summary {display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;}
+.selected-filter-summary.is-hidden {display:none;}
+.active-filter-chip {background:#f5f1ed;border:1px solid #d8cec6;border-radius:20px;padding:7px 12px;color:#544437;font-size:12px;cursor:pointer;}
+.active-filter-chip:hover,.active-filter-chip:focus-visible {background:#e8ddd4;outline-offset:2px;}
+#catalog-filters .filter-size-list label input:checked~.facet-count {color:#302b29;font-weight:600;}
+@media(max-width:390px){#catalog-filters .filter-size-list {gap:5px;}#catalog-filters .filter-size-list .facet-name{height:36px;}}

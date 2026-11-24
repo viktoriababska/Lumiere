@@ -1,0 +1,13 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {findStyles,catalog} from '../js/style-matcher.mjs';
+test('Only actual dress stock is considered',()=>{assert.ok(catalog.length>=15);assert.ok(catalog.every(i=>i.category===undefined));});
+test('Every match stays under max budget',()=>{for(const amount of ['2800','4000','9000','10000'])assert.ok(findStyles({budget:amount}).matches.every(x=>x.price<=Number(amount)));});
+for(const occasion of ['evening','cocktail'])test('Occasion '+occasion,()=>assert.ok(findStyles({occasion}).matches.every(x=>x.occasion===occasion)));
+for(const length of ['mini','maxi'])test('Length '+length,()=>assert.ok(findStyles({length}).matches.every(x=>x.length===length)));
+for(const silhouette of ['fitted','a-line','corset'])test('Silhouette '+silhouette,()=>assert.ok(findStyles({silhouette}).matches.every(x=>x.silhouette===silhouette)));
+for(const budget of ['', ' ', '-1','0','999','50001','Infinity','NaN','10e3','100.5','abc','999999999999999999999999'])test('Reject budget '+JSON.stringify(budget),()=>assert.throws(()=>findStyles({budget}),RangeError));
+for(const key of ['occasion','length','silhouette'])test('Reject invalid '+key,()=>assert.throws(()=>findStyles({[key]:'bogus'}),RangeError));
+test('A precise unavailable combination returns zero, not a fake product',()=>{const r=findStyles({occasion:'evening',length:'mini',budget:'5000'});assert.equal(r.count,0);assert.equal(r.first,null);});
+test('Results are deterministic',()=>assert.deepEqual(findStyles({budget:'10000'}).matches,findStyles({budget:'10000'}).matches));
+test('Recommended item is included in matches',()=>{const r=findStyles({budget:'10000'});assert.equal(r.first,r.matches[0]);});

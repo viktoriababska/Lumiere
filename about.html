@@ -2,7 +2,9 @@
 
 <html lang="uk">
 <head>
+<script id="theme-prepaint">(function(){try{var t=localStorage.getItem('lumiere-theme');document.documentElement.dataset.theme=t==='dark'?'dark':'light';document.documentElement.classList.toggle('dark',t==='dark');}catch(e){document.documentElement.dataset.theme='light';document.documentElement.classList.remove('dark');}})();</script>
 <meta charset="utf-8"/>
+<script>if ("scrollRestoration" in history) history.scrollRestoration = "manual"; if (!location.hash && performance.getEntriesByType("navigation")[0]?.type === "reload") window.addEventListener("pageshow", () => requestAnimationFrame(() => scrollTo(0, 0)));</script>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="Lumiere — український бренд одягу з персональним підбором розміру" name="description"/>
 <title>
@@ -12,7 +14,7 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Montserrat:wght@300;400&amp;family=Raleway:wght@300;400;500;600;700&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/><noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Montserrat:wght@300;400&amp;family=Raleway:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/></noscript>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" media="print" onload="this.media='all'" rel="stylesheet"/><noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/></noscript>
-<link href="css/style.css" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/><link href="css/atelier-interactions.css" rel="stylesheet"/>
 <link href="css/tailwind-components.css" rel="stylesheet"/>
 <script defer="" src="js/app.js">
 </script>
@@ -20,8 +22,20 @@
 <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/favicon.png?v=4"/>
 <link rel="shortcut icon" href="assets/icons/favicon.ico?v=4"/>
 <meta name="theme-color" content="#302b29"/>
+<script defer src="js/experience.js"></script>
+<script defer src="js/interaction-finish.js"></script>
+<link rel="canonical" href="https://lumiere-dress.netlify.app/about.html"/>
+<meta property="og:type" content="website"/><meta property="og:image" content="https://lumiere-dress.netlify.app/assets/images/hero-model.jpg"/><meta property="og:image:alt" content="Lumiere — колекція вечірніх суконь"/>
+<meta property="og:title" content="Про нас — Lumiere"/>
+<meta property="og:description" content="Lumiere — український бренд одягу з персональним підбором розміру"/>
+<meta property="og:url" content="https://lumiere-dress.netlify.app/about.html"/>
+<link rel="stylesheet" href="css/final-refinements.css"/>
+<link rel="stylesheet" href="css/interaction-finish.css"/>
+<link rel="stylesheet" href="css/themes.css?v=1"/><link rel="stylesheet" href="css/theme-polish.css?v=2"/>
+<script defer src="js/theme.js?v=1"></script><script defer src="js/mock-content.js"></script>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Перейти до основного вмісту</a>
 <div class="announcement">
    Безкоштовна консультація з підбору розміру
    <button class="text-link" data-open="advisor">
@@ -42,10 +56,7 @@
 </a>
 <form class="header-search">
 <input aria-label="Пошук товарів" id="site-search" placeholder="Пошук суконь..." type="search"/>
-<button aria-label="Шукати">
-<i class="fa-solid fa-magnifying-glass">
-</i>
-</button>
+<button type="submit" aria-label="Шукати сукні"><svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg></button>
 </form>
 <nav class="main-nav">
 <a class="nav-link" href="index.html">
@@ -62,6 +73,7 @@
      </a>
 </nav>
 <div class="header-actions">
+<button type="button" class="theme-toggle" data-theme-toggle role="switch" aria-checked="false" aria-label="Увімкнути темну тему" title="Перемкнути світлу й темну тему"><span class="theme-toggle-icon theme-icon-moon" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 13.2A8.6 8.6 0 0 1 10.8 3.5 8.6 8.6 0 1 0 20.5 13.2Z"/></svg></span><span class="theme-toggle-icon theme-icon-sun" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></span></button>
 <a aria-label="Особистий кабінет" class="interactive-icon" href="account.html">
 <i class="fa-regular fa-user">
 </i>
@@ -83,7 +95,7 @@
 </div>
 </div>
 </header>
-<main>
+<main id="main-content">
 <section class="about-hero">
 <div class="container about-hero-grid">
 <div class="about-hero-copy">
@@ -120,7 +132,7 @@
 </div>
 </div>
 </section>
-<section class="story-section section-pad">
+<section class="story-section section-pad" id="our-story">
 <div class="container story-grid">
 <div class="story-symbol">
 <span class="section-tag">
@@ -148,28 +160,28 @@
 <p>
        Саме тому ми створюємо Lumiere як простір усвідомленого вибору: із зрозумілими характеристиками моделей, зручними фільтрами та помічником Size Advisor. Ми хочемо, щоб ви могли порівняти сукні, обрати свій силует і впевненіше визначитися з розміром.
       </p>
-<div class="story-stats">
+<div class="story-stats" data-remote-stats aria-label="Особливості Lumiere">
 <div>
-<strong>
+<strong data-stat-value="1">
          01
         </strong>
-<span>
+<span data-stat-label="1">
          увага до деталей
         </span>
 </div>
 <div>
-<strong>
+<strong data-stat-value="2">
          UA
         </strong>
-<span>
+<span data-stat-label="2">
          створено в Україні
         </span>
 </div>
 <div>
-<strong>
+<strong data-stat-value="3">
          Fit
         </strong>
-<span>
+<span data-stat-label="3">
          посадка з турботою
         </span>
 </div>
@@ -233,18 +245,18 @@
 </div>
 </div>
 </section>
-<section class="about-confidence section-pad" aria-labelledby="confidence-heading">
+<section class="about-confidence dark:bg-neutral-900 dark:text-stone-100 section-pad" aria-labelledby="confidence-heading">
   <div class="container about-confidence-layout">
     <div class="about-confidence-intro">
       <span class="section-tag">ЧОМУ LUMIERE</span>
       <h2 id="confidence-heading">Святковий образ без зайвих сумнівів</h2>
       <p>Ми хочемо зробити вибір вечірньої сукні онлайн простішим: щоб ви могли зосередитися на майбутній події, а не хвилюватися через незрозумілий розмір чи фасон.</p>
-      <a href="catalog.html" class="btn btn-outline">Знайти свою сукню ↗</a>
+      <a href="catalog.html" class="btn btn-dark about-find-btn">Переглянути сукні ↗</a>
     </div>
     <div class="about-confidence-points">
-      <article><span>01</span><div><h3>Зрозумілий вибір</h3><p>У каталозі можна порівняти сукні за довжиною, силуетом, кольором, розміром і ціною.</p></div></article>
-      <article><span>02</span><div><h3>Підказка з розміром</h3><p>Size Advisor допомагає зорієнтуватися за вашими мірками перед вибором моделі.</p></div></article>
-      <article><span>03</span><div><h3>Український характер</h3><p>Ми цінуємо локальне виробництво, уважність до форми й речі, створені для особливих моментів.</p></div></article>
+      <article><span>01</span><div><h3>Зрозумілий вибір</h3><p>У каталозі можна порівняти сукні за довжиною, силуетом, кольором, розміром і ціною.</p></div><a class="confidence-action" href="catalog.html" aria-label="Перейти до каталогу суконь" title="Перейти до каталогу">↗</a></article>
+      <article><span>02</span><div><h3>Підказка з розміром</h3><p>Size Advisor допомагає зорієнтуватися за вашими мірками перед вибором моделі.</p></div><button class="confidence-action" type="button" data-open="advisor" aria-label="Відкрити помічник підбору розміру" title="Відкрити Size Advisor">↗</button></article>
+      <article><span>03</span><div><h3>Український характер</h3><p>Ми цінуємо локальне виробництво, уважність до форми й речі, створені для особливих моментів.</p></div><a class="confidence-action" href="#our-story" aria-label="Перейти до історії бренду Lumiere" title="Наша історія">↗</a></article>
     </div>
   </div>
 </section>
@@ -358,6 +370,24 @@
 </article>
 </div>
 </div>
+</section>
+
+<!-- LAB 10–12: keyboard-accessible native accordion, no external JS required. -->
+<section class="about-faq dark:bg-neutral-900 dark:text-stone-100 section-pad" id="about-faq" aria-labelledby="about-faq-title">
+  <div class="container about-faq-grid">
+    <div class="about-faq-intro">
+      <span class="section-tag">ВАШІ ЗАПИТАННЯ</span>
+      <h2 id="about-faq-title">Деталі, що мають значення</h2>
+      <p>Натисніть на запитання, щоб дізнатися більше про вибір сукні та наш онлайн-каталог.</p>
+      <a class="text-link" href="index.html#feedback">Поставити власне запитання ↗</a>
+    </div>
+    <div class="about-faq-questions">
+      <details class="about-faq-item" name="lumiere-faq"><summary>Як обрати правильний розмір?<span class="faq-indicator" aria-hidden="true">+</span></summary><div class="faq-answer"><p>Скористайтеся Size Advisor: введіть обхвати грудей, талії та стегон. Він дає орієнтовну рекомендацію, а остаточний вибір залежить від крою конкретної сукні.</p><button class="text-link" type="button" data-open="advisor">Спробувати Size Advisor ↗</button></div></details>
+      <details class="about-faq-item" name="lumiere-faq"><summary>Як переглянути деталі сукні?<span class="faq-indicator" aria-hidden="true">+</span></summary><div class="faq-answer"><p>У каталозі відкрийте швидкий перегляд: там можна побачити фотографію, ціну та доступні розміри. Обрану модель можна зберегти в «Обране».</p></div></details>
+      <details class="about-faq-item" name="lumiere-faq"><summary>Як знайти сукню за своїми побажаннями?<span class="faq-indicator" aria-hidden="true">+</span></summary><div class="faq-answer"><p>Так. На головній сторінці працює інтерактивний підбір за нагодою, довжиною, фасоном і бюджетом. Він пропонує лише моделі з наявного каталогу.</p><a class="text-link" href="index.html#outfit-calculator">Перейти до підбору сукні ↗</a></div></details>
+      <details class="about-faq-item" name="lumiere-faq"><summary>Чи здійснюється оплата на сайті?<span class="faq-indicator" aria-hidden="true">+</span></summary><div class="faq-answer"><p>Наразі кошик та оформлення замовлення працюють у демонстраційному режимі. Сайт не приймає платежі й не відправляє замовлення на сервер.</p></div></details>
+    </div>
+  </div>
 </section>
 <section class="about-cta">
 <div class="container">

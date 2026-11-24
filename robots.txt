@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://lumiere-dress.netlify.app/sitemap.xml

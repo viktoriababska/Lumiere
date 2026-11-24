@@ -2,7 +2,9 @@
 
 <html lang="uk">
 <head>
+<script id="theme-prepaint">(function(){try{var t=localStorage.getItem('lumiere-theme');document.documentElement.dataset.theme=t==='dark'?'dark':'light';document.documentElement.classList.toggle('dark',t==='dark');}catch(e){document.documentElement.dataset.theme='light';document.documentElement.classList.remove('dark');}})();</script>
 <meta charset="utf-8"/>
+<script>if ("scrollRestoration" in history) history.scrollRestoration = "manual"; if (!location.hash && performance.getEntriesByType("navigation")[0]?.type === "reload") window.addEventListener("pageshow", () => requestAnimationFrame(() => scrollTo(0, 0)));</script>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="Lumiere — український бренд одягу з персональним підбором розміру" name="description"/>
 <title>
@@ -12,7 +14,7 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Montserrat:wght@300;400&amp;family=Raleway:wght@300;400;500;600;700&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/><noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Montserrat:wght@300;400&amp;family=Raleway:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/></noscript>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" media="print" onload="this.media='all'" rel="stylesheet"/><noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/></noscript>
-<link as="image" fetchpriority="high" href="assets/images/hero-model.jpg" rel="preload"/><link href="css/style.css" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/><link href="css/atelier-interactions.css" rel="stylesheet"/>
 <link href="css/tailwind-components.css" rel="stylesheet"/>
 <script defer="" src="js/app.js">
 </script>
@@ -21,8 +23,29 @@
 <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/favicon.png?v=4"/>
 <link rel="shortcut icon" href="assets/icons/favicon.ico?v=4"/>
 <meta name="theme-color" content="#302b29"/>
+<!-- LAB 10: independent Vanilla JS libraries via CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5/dist/fancybox/fancybox.css" />
+<script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5/dist/fancybox/fancybox.umd.js"></script>
+<script defer src="js/lookbook.js"></script>
+<script type="module" src="js/style-finder.mjs"></script>
+<script defer src="js/experience.js"></script>
+<script defer src="js/interaction-finish.js"></script>
+<link rel="canonical" href="https://lumiere-dress.netlify.app/"/>
+<meta property="og:type" content="website"/><meta property="og:image" content="https://lumiere-dress.netlify.app/assets/images/hero-model.jpg"/><meta property="og:image:alt" content="Lumiere — колекція вечірніх суконь"/>
+<meta property="og:title" content="Lumiere — Елегантні сукні. Ваш точний розмір"/>
+<meta property="og:description" content="Lumiere — український бренд одягу з персональним підбором розміру"/>
+<meta property="og:url" content="https://lumiere-dress.netlify.app/"/>
+<link rel="stylesheet" href="css/final-refinements.css"/><link href="css/quickview-overlay.css" rel="stylesheet"/>
+<link rel="stylesheet" href="css/interaction-finish.css"/>
+<link rel="stylesheet" href="css/themes.css?v=1"/><link rel="stylesheet" href="css/theme-polish.css?v=2"/>
+<script defer src="js/theme.js?v=1"></script>
+<link rel="stylesheet" href="css/hero-video.css?v=1"/>
+<script defer src="js/hero-video.js?v=1"></script>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Перейти до основного вмісту</a>
 <div class="announcement">
    Безкоштовна консультація з підбору розміру
    <button class="text-link" data-open="advisor">
@@ -43,10 +66,7 @@
 </a>
 <form class="header-search">
 <input aria-label="Пошук товарів" id="site-search" placeholder="Пошук суконь..." type="search"/>
-<button aria-label="Шукати">
-<i class="fa-solid fa-magnifying-glass">
-</i>
-</button>
+<button type="submit" aria-label="Шукати сукні"><svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg></button>
 </form>
 <nav class="main-nav">
 <a class="nav-link active" href="index.html">
@@ -63,6 +83,7 @@
      </a>
 </nav>
 <div class="header-actions">
+<button type="button" class="theme-toggle" data-theme-toggle role="switch" aria-checked="false" aria-label="Увімкнути темну тему" title="Перемкнути світлу й темну тему"><span class="theme-toggle-icon theme-icon-moon" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 13.2A8.6 8.6 0 0 1 10.8 3.5 8.6 8.6 0 1 0 20.5 13.2Z"/></svg></span><span class="theme-toggle-icon theme-icon-sun" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></span></button>
 <a aria-label="Особистий кабінет" class="interactive-icon" href="account.html">
 <i class="fa-regular fa-user">
 </i>
@@ -84,20 +105,30 @@
 </div>
 </div>
 </header>
-<main>
-<section class="hero-section">
+<main id="main-content">
+<section class="hero-section" aria-label="Головний банер Lumiere">
+<!-- Два фонові відео під світлу й темну теми. Аудіодоріжки видалені.
+     Якщо autoplay недоступний, браузер показує фонове фото. -->
+<div class="hero-media" aria-hidden="true">
+  <video class="hero-media__video" data-hero-video="light"
+         data-src="assets/video/hero-light.mp4"
+         poster="assets/video/hero-light.webp"
+         muted playsinline loop preload="none" tabindex="-1"></video>
+  <video class="hero-media__video" data-hero-video="dark"
+         data-src="assets/video/hero-dark.mp4"
+         poster="assets/video/hero-dark.webp"
+         muted playsinline loop preload="none" tabindex="-1"></video>
+</div>
 <div class="container hero-container">
 <div class="hero-content">
 <span class="eyebrow">
        LUMIERE · MADE IN UKRAINE
       </span>
-<h1 class="hero-title">
-       Елегантні сукні.
-       <br/>
-       Ваш точний розмір
-       <br/>
-       без примірок.
-      </h1>
+<h1 class="hero-title hero-script" aria-label="Елегантні сукні. Ваш точний розмір без примірок.">
+ <span class="hero-line"><span>Елегантні сукні.</span></span>
+ <span class="hero-line"><span>Ваш точний розмір</span></span>
+ <span class="hero-line"><span>без примірок.</span></span>
+</h1>
 <p class="hero-desc">
        Поєднуємо витончений дизайн, якісні тканини та технологічний підбір розміру для вашого комфорту.
       </p>
@@ -143,7 +174,7 @@
      </button>
 </div>
 </section>
-<section class="features-section section-pad">
+<section class="features-section dark:bg-neutral-900 dark:text-stone-100 section-pad">
 <div class="container">
 <div class="section-title-center">
 <span class="section-tag">
@@ -157,7 +188,7 @@
       </p>
 </div>
 <div class="features-grid">
-<article class="feature-card" tabindex="0">
+<article class="feature-card">
 <span class="feature-number">
         01
        </span>
@@ -173,8 +204,9 @@
 <a class="feature-more" href="about.html">
         Наша історія ↗
        </a>
+
 </article>
-<article class="feature-card" tabindex="0">
+<article class="feature-card">
 <span class="feature-number">
         02
        </span>
@@ -190,8 +222,9 @@
 <button class="feature-more" data-open="advisor">
         Спробувати ↗
        </button>
+
 </article>
-<article class="feature-card" tabindex="0">
+<article class="feature-card">
 <span class="feature-number">
         03
        </span>
@@ -207,8 +240,9 @@
 <a class="feature-more" href="https://dp.dpss.gov.ua/news/osnovni-pravila-shchodo-obminu-tovaru-ta-povernennya-groshej" rel="noopener noreferrer" target="_blank">
         Дізнатись більше ↗
        </a>
+
 </article>
-<article class="feature-card" tabindex="0">
+<article class="feature-card">
 <span class="feature-number">
         04
        </span>
@@ -224,6 +258,7 @@
 <a class="feature-more" href="about.html#materials">
         Про матеріали ↗
        </a>
+
 </article>
 </div>
 </div>
@@ -250,7 +285,7 @@
 
 
 
-<article class="product-card new-product" data-category="dress" data-color="pink" data-length="mini" data-occasion="cocktail" data-order="0" data-price="5200" data-product="flora" data-silhouette="a-line" data-sizes="XS S M L XL" data-sleeve="none"><div class="product-image-box"><img alt="Сукня FLORA" decoding="async" loading="lazy" src="assets/images/dress-flora.webp"/><button aria-label="Додати Сукня FLORA в обране" class="favorite-toggle" data-favorite="flora" type="button"><i class="fa-regular fa-heart"></i></button><button class="quick-view" data-quickview="flora" type="button">Швидкий перегляд</button></div><div class="product-info"><div class="product-title-row"><h3>Сукня FLORA</h3><span class="price">5 200 ₴</span></div><p class="product-subtitle">Рожевий · квіткова міні</p><div class="product-footer"><button class="btn-text-buy" data-add="flora" type="button">Обрати розмір · В кошик</button></div></div></article><article class="product-card new-product" data-category="dress" data-color="black" data-length="maxi" data-occasion="evening" data-order="1" data-price="9100" data-product="lirienna" data-silhouette="fitted" data-sizes="XS S M L XL" data-sleeve="none"><div class="product-image-box"><img alt="Сукня LIRIENNA" decoding="async" loading="lazy" src="assets/images/dress-lirienna.webp"/><button aria-label="Додати Сукня LIRIENNA в обране" class="favorite-toggle" data-favorite="lirienna" type="button"><i class="fa-regular fa-heart"></i></button><button class="quick-view" data-quickview="lirienna" type="button">Швидкий перегляд</button></div><div class="product-info"><div class="product-title-row"><h3>Сукня LIRIENNA</h3><span class="price">9 100 ₴</span></div><p class="product-subtitle">Чорний · блискуча максі</p><div class="product-footer"><button class="btn-text-buy" data-add="lirienna" type="button">Обрати розмір · В кошик</button></div></div></article><article class="product-card new-product" data-category="dress" data-color="yellow" data-length="mini" data-occasion="cocktail" data-order="2" data-price="5900" data-product="antoinetta" data-silhouette="a-line" data-sizes="XS S M L XL" data-sleeve="none"><div class="product-image-box"><img alt="Костюм-сукня ANTOINETTA" decoding="async" loading="lazy" src="assets/images/dress-antoinetta-yellow.webp"/><span class="product-label">Нова колекція</span><button aria-label="Додати Костюм-сукня ANTOINETTA в обране" class="favorite-toggle" data-favorite="antoinetta" type="button"><i class="fa-regular fa-heart"></i></button><button class="quick-view" data-quickview="antoinetta" type="button">Швидкий перегляд</button></div><div class="product-info"><div class="product-title-row"><h3>Костюм-сукня ANTOINETTA</h3><span class="price">5 900 ₴</span></div><p class="product-subtitle">Жовтий · багатошарова міні</p><div class="product-footer"><button class="btn-text-buy" data-add="antoinetta" type="button">Обрати розмір · В кошик</button></div></div></article></div>
+<article class="product-card new-product" data-category="dress" data-color="pink" data-length="mini" data-occasion="cocktail" data-order="0" data-price="5200" data-product="flora" data-silhouette="a-line" data-sizes="XS S M L XL" data-sleeve="none"><div class="product-image-box"><img width="1500" height="2250" alt="Сукня FLORA" decoding="async" loading="lazy" src="assets/images/dress-flora.webp"/><button aria-label="Додати Сукня FLORA в обране" class="favorite-toggle" data-favorite="flora" type="button"><i class="fa-regular fa-heart"></i></button><div class="quick-view-row"><button class="quick-view" data-quickview="flora" type="button">Швидкий перегляд</button></div></div><div class="product-info"><div class="product-title-row"><h3>Сукня FLORA</h3><span class="price">5 200 ₴</span></div><p class="product-subtitle">Рожевий · квіткова міні</p><div class="product-footer"><button class="btn-text-buy" data-add="flora" type="button">Обрати розмір · В кошик</button></div></div></article><article class="product-card new-product" data-category="dress" data-color="black" data-length="maxi" data-occasion="evening" data-order="1" data-price="9100" data-product="lirienna" data-silhouette="fitted" data-sizes="XS S M L XL" data-sleeve="none"><div class="product-image-box"><img width="1632" height="2448" alt="Сукня LIRIENNA" decoding="async" loading="lazy" src="assets/images/dress-lirienna.webp"/><button aria-label="Додати Сукня LIRIENNA в обране" class="favorite-toggle" data-favorite="lirienna" type="button"><i class="fa-regular fa-heart"></i></button><div class="quick-view-row"><button class="quick-view" data-quickview="lirienna" type="button">Швидкий перегляд</button></div></div><div class="product-info"><div class="product-title-row"><h3>Сукня LIRIENNA</h3><span class="price">9 100 ₴</span></div><p class="product-subtitle">Чорний · блискуча максі</p><div class="product-footer"><button class="btn-text-buy" data-add="lirienna" type="button">Обрати розмір · В кошик</button></div></div></article><article class="product-card new-product" data-category="dress" data-color="yellow" data-length="mini" data-occasion="cocktail" data-order="2" data-price="5900" data-product="antoinetta" data-silhouette="a-line" data-sizes="XS S M L XL" data-sleeve="none"><div class="product-image-box"><img width="1080" height="1621" alt="Костюм-сукня ANTOINETTA" decoding="async" loading="lazy" src="assets/images/dress-antoinetta-yellow.webp"/><span class="product-label">Нова колекція</span><button aria-label="Додати Костюм-сукня ANTOINETTA в обране" class="favorite-toggle" data-favorite="antoinetta" type="button"><i class="fa-regular fa-heart"></i></button><div class="quick-view-row"><button class="quick-view" data-quickview="antoinetta" type="button">Швидкий перегляд</button></div></div><div class="product-info"><div class="product-title-row"><h3>Костюм-сукня ANTOINETTA</h3><span class="price">5 900 ₴</span></div><p class="product-subtitle">Жовтий · багатошарова міні</p><div class="product-footer"><button class="btn-text-buy" data-add="antoinetta" type="button">Обрати розмір · В кошик</button></div></div></article></div>
 </div>
 </section>
 <section class="quote-section">
@@ -276,76 +311,165 @@
        Слова, які надихають
       </h2>
 <p>
-       Враження наших клієнток.
+       Історії про деталі, що залишаються в пам’яті.
       </p>
 </div>
-<div class="reviews-grid">
-<article class="review-card">
-<div class="stars">
-        ★★★★★
-       </div>
-<p>
-        «Сукня сіла ідеально, навіть не довелося підшивати поділ».
-       </p>
-<div class="review-author">
-<span class="avatar-placeholder">
-         ОК
-        </span>
-<div>
-<h3>
-          Олена Коваль
-         </h3>
-<span>
-          Покупка через Size Advisor
-         </span>
+<div class="reviews-grid" id="reviews-grid" aria-live="polite">
+<article class="review-card" aria-label="Відгук: Олена Коваль">
+  <div class="stars" aria-label="П’ять зірок">★★★★★</div>
+  <p>«Сукня сіла ідеально, навіть не довелося підшивати поділ.»</p>
+  <div class="review-author"><span class="avatar-placeholder" aria-hidden="true">ОК</span><div><h3>Олена Коваль</h3><span>Підбір розміру</span></div></div>
+ </article>
+<article class="review-card" aria-label="Відгук: Марія Шевченко">
+  <div class="stars" aria-label="П’ять зірок">★★★★★</div>
+  <p>«Вперше замовила вечірню сукню онлайн без хвилювань.»</p>
+  <div class="review-author"><span class="avatar-placeholder" aria-hidden="true">МШ</span><div><h3>Марія Шевченко</h3><span>Вечірня колекція</span></div></div>
+ </article>
+<article class="review-card" aria-label="Відгук: Ірина Мельник">
+  <div class="stars" aria-label="П’ять зірок">★★★★★</div>
+  <p>«Дуже красиве пакування й відчуття, що про тебе подбали.»</p>
+  <div class="review-author"><span class="avatar-placeholder" aria-hidden="true">ІМ</span><div><h3>Ірина Мельник</h3><span>Деталі образу</span></div></div>
+ </article>
+<article class="review-card" aria-label="Відгук: Софія Левченко">
+  <div class="stars" aria-label="П’ять зірок">★★★★★</div>
+  <p>«Сподобалося, що всі розміри та відтінки можна порівняти до вибору.»</p>
+  <div class="review-author"><span class="avatar-placeholder" aria-hidden="true">СЛ</span><div><h3>Софія Левченко</h3><span>Святкова міні</span></div></div>
+ </article>
+<article class="review-card" aria-label="Відгук: Анастасія Кравець">
+  <div class="stars" aria-label="П’ять зірок">★★★★★</div>
+  <p>«Зручний каталог: легко знайти сукню потрібної довжини й фасону.»</p>
+  <div class="review-author"><span class="avatar-placeholder" aria-hidden="true">АК</span><div><h3>Анастасія Кравець</h3><span>Вибір фасону</span></div></div>
+ </article>
+<article class="review-card" aria-label="Відгук: Дарина Романюк">
+  <div class="stars" aria-label="П’ять зірок">★★★★★</div>
+  <p>«Підказка щодо розміру допомогла зорієнтуватися перед вибором.»</p>
+  <div class="review-author"><span class="avatar-placeholder" aria-hidden="true">ДР</span><div><h3>Дарина Романюк</h3><span>Size Advisor</span></div></div>
+ </article>
+<article class="review-card" aria-label="Відгук: Вікторія Поліщук">
+  <div class="stars" aria-label="П’ять зірок">★★★★★</div>
+  <p>«Особливо подобаються лаконічні моделі та фото без зайвих деталей.»</p>
+  <div class="review-author"><span class="avatar-placeholder" aria-hidden="true">ВП</span><div><h3>Вікторія Поліщук</h3><span>Мінімалістичний стиль</span></div></div>
+ </article>
+<article class="review-card" aria-label="Відгук: Наталія Бойко">
+  <div class="stars" aria-label="П’ять зірок">★★★★★</div>
+  <p>«Зручно переглядати моделі й додавати вподобані до обраного.»</p>
+  <div class="review-author"><span class="avatar-placeholder" aria-hidden="true">НБ</span><div><h3>Наталія Бойко</h3><span>Максі сукні</span></div></div>
+ </article>
+<article class="review-card" aria-label="Відгук: Юлія Савчук">
+  <div class="stars" aria-label="П’ять зірок">★★★★★</div>
+  <p>«Приємно, що можна роздивитися сукню, не залишаючи каталог.»</p>
+  <div class="review-author"><span class="avatar-placeholder" aria-hidden="true">ЮС</span><div><h3>Юлія Савчук</h3><span>Швидкий перегляд</span></div></div>
+ </article>
 </div>
-</div>
-</article>
-<article class="review-card">
-<div class="stars">
-        ★★★★★
-       </div>
-<p>
-        «Вперше замовила вечірню сукню онлайн без хвилювань».
-       </p>
-<div class="review-author">
-<span class="avatar-placeholder">
-         МШ
-        </span>
-<div>
-<h3>
-          Марія Шевченко
-         </h3>
-<span>
-          Клієнтка Lumiere
-         </span>
-</div>
-</div>
-</article>
-<article class="review-card">
-<div class="stars">
-        ★★★★★
-       </div>
-<p>
-        «Дуже красиве пакування й відчуття, що про тебе подбали».
-       </p>
-<div class="review-author">
-<span class="avatar-placeholder">
-         ІМ
-        </span>
-<div>
-<h3>
-          Ірина Мельник
-         </h3>
-<span>
-          Постійна клієнтка
-         </span>
-</div>
-</div>
-</article>
-</div>
+ <div class="review-toolbar" aria-label="Гортання відгуків">
+  <button type="button" class="review-arrow review-prev" aria-label="Попередні відгуки">←</button>
+  <div class="review-progress" role="group" aria-label="Виберіть відгук"></div>
+  <button type="button" class="review-arrow review-next" aria-label="Наступні відгуки">→</button>
+ </div>
+ <p class="review-caption">Переглядайте відгуки <span id="review-counter">01–03 / 09</span></p>
 </div>
 </section>
+
+<!-- LAB 10: Swiper.js + Fancybox v5 portfolio gallery. Images are existing Lumiere assets. -->
+<section class="lookbook-section section-pad" id="lookbook" aria-labelledby="lookbook-title">
+ <div class="container">
+  <div class="lookbook-heading">
+   <div><span class="section-tag">LUMIERE / LOOKBOOK</span>
+    <h2 id="lookbook-title">Натхнення колекції</h2>
+    <p>Гортайте образи та натисніть на фото, щоб розглянути деталі.</p>
+   </div>
+   <div class="lookbook-controls" aria-label="Керування галереєю">
+    <button type="button" class="lookbook-prev" aria-label="Попередній образ"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></button>
+    <button type="button" class="lookbook-next" aria-label="Наступний образ"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+   </div>
+  </div>
+  <div class="swiper lumiere-swiper" aria-label="Карусель з шести образів Lumiere">
+   <div class="swiper-wrapper">
+<article class="swiper-slide lumiere-look-slide">
+  <a class="look-image-link" href="assets/images/dress-flora.webp" data-fancybox="lumiere-gallery" data-caption="Сукня FLORA — колекція Lumiere" aria-label="Розглянути сукню FLORA у галереї">
+   <img src="assets/images/dress-flora.webp" alt="Сукня FLORA — квіткова легкість" loading="lazy" decoding="async" />
+   <span class="look-zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+  </a>
+  <div class="look-caption"><span>Квіткова легкість</span><h3>FLORA</h3></div>
+ </article>
+<article class="swiper-slide lumiere-look-slide">
+  <a class="look-image-link" href="assets/images/dress-lirienna.webp" data-fancybox="lumiere-gallery" data-caption="Сукня LIRIENNA — колекція Lumiere" aria-label="Розглянути сукню LIRIENNA у галереї">
+   <img src="assets/images/dress-lirienna.webp" alt="Сукня LIRIENNA — вишукана класика" loading="lazy" decoding="async" />
+   <span class="look-zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+  </a>
+  <div class="look-caption"><span>Вишукана класика</span><h3>LIRIENNA</h3></div>
+ </article>
+<article class="swiper-slide lumiere-look-slide">
+  <a class="look-image-link" href="assets/images/dress-antoinetta-yellow.webp" data-fancybox="lumiere-gallery" data-caption="Сукня ANTOINETTA — колекція Lumiere" aria-label="Розглянути сукню ANTOINETTA у галереї">
+   <img src="assets/images/dress-antoinetta-yellow.webp" alt="Сукня ANTOINETTA — сонячний настрій" loading="lazy" decoding="async" />
+   <span class="look-zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+  </a>
+  <div class="look-caption"><span>Сонячний настрій</span><h3>ANTOINETTA</h3></div>
+ </article>
+<article class="swiper-slide lumiere-look-slide">
+  <a class="look-image-link" href="assets/images/dress-adelie-dovga.webp" data-fancybox="lumiere-gallery" data-caption="Сукня ADELIE — колекція Lumiere" aria-label="Розглянути сукню ADELIE у галереї">
+   <img src="assets/images/dress-adelie-dovga.webp" alt="Сукня ADELIE — вечірня елегантність" loading="lazy" decoding="async" />
+   <span class="look-zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+  </a>
+  <div class="look-caption"><span>Вечірня елегантність</span><h3>ADELIE</h3></div>
+ </article>
+<article class="swiper-slide lumiere-look-slide">
+  <a class="look-image-link" href="assets/images/dress-elizabeth.jpg" data-fancybox="lumiere-gallery" data-caption="Сукня ELIZABETH — колекція Lumiere" aria-label="Розглянути сукню ELIZABETH у галереї">
+   <img src="assets/images/dress-elizabeth.jpg" alt="Сукня ELIZABETH — стримана розкіш" loading="lazy" decoding="async" />
+   <span class="look-zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+  </a>
+  <div class="look-caption"><span>Стримана розкіш</span><h3>ELIZABETH</h3></div>
+ </article>
+<article class="swiper-slide lumiere-look-slide">
+  <a class="look-image-link" href="assets/images/dress-leola.webp" data-fancybox="lumiere-gallery" data-caption="Сукня LEOLA — колекція Lumiere" aria-label="Розглянути сукню LEOLA у галереї">
+   <img src="assets/images/dress-leola.webp" alt="Сукня LEOLA — жіночний силует" loading="lazy" decoding="async" />
+   <span class="look-zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+  </a>
+  <div class="look-caption"><span>Жіночний силует</span><h3>LEOLA</h3></div>
+ </article>
+   </div>
+  </div>
+  <div class="swiper-pagination lumiere-pagination" aria-label="Сторінки галереї"></div>
+  <p class="lookbook-note">Оберіть фото, щоб відкрити інтерактивну галерею з масштабуванням.</p>
+ </div>
+</section>
+
+<!-- LAB 11: live style finder. Four parameters choose REAL catalog dresses; safe edge handling. -->
+<section class="outfit-section style-finder-section section-pad" id="outfit-calculator" aria-labelledby="outfit-title">
+ <div class="container outfit-layout">
+  <div class="outfit-intro">
+   <span class="section-tag">LUMIERE / STYLE FINDER</span>
+   <h2 id="outfit-title">Знайдіть сукню для вашого моменту</h2>
+   <p>Оберіть нагоду, бажану довжину, фасон і бюджет. Ми підберемо для вас відповідні сукні <strong>з нашого каталогу</strong>.</p>
+   <div class="finder-process"><div><span>01</span> Оберіть нагоду</div><div><span>02</span> Вкажіть фасон і довжину</div><div><span>03</span> Перегляньте результат</div></div>
+   <p class="outfit-disclaimer">Це стилістична підказка за каталогом, а не оформлення замовлення. Для підбору розміру скористайтеся Size Advisor.</p>
+  </div>
+  <form id="outfit-form" class="outfit-form finder-form" novalidate aria-describedby="outfit-help">
+   <div class="finder-form-top"><span class="section-tag">ВАШІ ПОБАЖАННЯ</span><span class="finder-sparkle" aria-hidden="true">✦</span></div>
+   <p id="outfit-help" class="outfit-form-intro">Який образ шукаєте?</p>
+   <div class="outfit-fields finder-fields">
+    <div class="outfit-field"><label for="outfit-occasion">Для якої події?</label><select id="outfit-occasion" name="occasion"><option value="any">Для будь-якої нагоди</option><option value="evening">Урочистий вечір</option><option value="cocktail">Свято / коктейльна подія</option></select></div>
+    <div class="outfit-field"><label for="outfit-length">Бажана довжина</label><select id="outfit-length" name="length"><option value="any">Будь-яка</option><option value="mini">Міні</option><option value="maxi">Максі</option></select></div>
+    <div class="outfit-field"><label for="outfit-silhouette">Фасон</label><select id="outfit-silhouette" name="silhouette"><option value="any">Будь-який</option><option value="fitted">Приталений</option><option value="a-line">А-силует</option><option value="corset">Корсетний</option></select></div>
+    <div class="outfit-field"><label for="outfit-budget">Максимальний бюджет, ₴</label><input id="outfit-budget" name="budget" type="number" min="1000" max="50000" step="100" inputmode="numeric" value="10000" required aria-describedby="outfit-budget-help outfit-error"/><small id="outfit-budget-help">Від 1 000 до 50 000 ₴</small></div>
+   </div>
+   <p id="outfit-error" class="outfit-error" role="alert" aria-live="polite"></p>
+   <div class="finder-result" id="finder-result" aria-live="polite" aria-atomic="true">
+    <div class="finder-result-visual"><img id="finder-image" src="assets/images/dress-flora.webp" alt="Рекомендована сукня" loading="lazy" width="180" height="250"/></div>
+    <div class="finder-result-content"><span class="finder-match-label" id="finder-match-count">Підбираємо моделі…</span>
+     <h3 id="finder-name">Сукня з вашого каталогу</h3><p id="finder-reason">Вкажіть побажання — результат оновиться автоматично.</p>
+     <strong id="finder-price"></strong><a class="finder-view" href="catalog.html" id="finder-link">Відкрити каталог <span aria-hidden="true">↗</span></a></div>
+   </div>
+   <div class="finder-navigation" id="finder-navigation" aria-label="Перемикання знайдених суконь">
+    <button class="finder-nav-btn" type="button" id="finder-prev" aria-label="Попередня сукня">←</button>
+    <span class="finder-position" id="finder-position" aria-live="polite">1 / 1</span>
+    <button class="finder-nav-btn" type="button" id="finder-next" aria-label="Наступна сукня">→</button>
+   </div>
+   <div class="finder-footer"><button type="reset" class="btn btn-quiet outfit-reset">Очистити вибір ↺</button><span class="finder-live-note"><span aria-hidden="true"></span> Результат змінюється одразу</span></div>
+  </form>
+ </div>
+</section>
+
 <!-- LAB 9: accessible contact form with client-side validation (js/validation.js). -->
 <section aria-labelledby="feedback-title" class="feedback-section section-pad" id="feedback">
 <div class="container feedback-layout grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-7">

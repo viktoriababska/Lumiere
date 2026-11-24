@@ -1,0 +1,176 @@
+/* LUMIERE / FINAL INTERACTION POLISH — brand-consistent, accessible and restrained.
+   Loaded after legacy styles to resolve specificity conflicts from previous iterations.
+   Interactions describe purposeful hover/focus/press states; informational copy stays readable. */
+:root{--polish-accent:#ab8a74;--polish-ink:#594538;--polish-line:rgba(170,136,109,.33);--polish-ease:cubic-bezier(.22,.77,.25,1)}
+/* Buttons, links, chips: consistent focus and click response without abrupt palette changes. */
+:where(.btn,.btn-text-buy,.feature-more,.review-arrow,.review-dot,.interactive-icon,.quick-view,.lookbook-controls button,.account-tab,.finder-nav button,.about-faq-item summary){
+  -webkit-tap-highlight-color:transparent;
+  transition-duration:.42s!important;
+  transition-timing-function:var(--polish-ease)!important;
+}
+:where(button,a,select,input,summary):focus-visible{outline:2px solid #96715d!important;outline-offset:3px}
+:where(button,.btn,.interactive-icon):active:not(:disabled){filter:brightness(.96)}
+/* About: original subdued list is now visibly responsive, without lateral jumps. */
+html body .about-confidence-points article,
+html body .care-points article{
+  position:relative;isolation:isolate;
+  margin-inline:-15px!important;padding:22px 15px!important;
+  border:1px solid transparent!important;
+  border-bottom:1px solid #e7dcd2!important;
+  border-radius:6px!important;
+  background-color:rgba(255,253,250,0)!important;
+  background-image:linear-gradient(100deg,rgba(240,231,222,.6),rgba(250,246,243,.27) 78%)!important;
+  background-repeat:no-repeat!important;
+  background-size:0% 100%!important;
+  box-shadow:none!important;transform:none!important;
+  transition:background-size .72s var(--polish-ease),border-color .6s ease,box-shadow .6s ease!important;
+}
+html body .about-confidence-points article::after,
+html body .care-points article::after{
+  content:"";position:absolute;left:0;top:18%;bottom:18%;width:2px;border-radius:4px;
+  background:linear-gradient(#d8b6a0,#9d745d);transform:scaleY(0);transform-origin:center;
+  transition:transform .56s var(--polish-ease);pointer-events:none;
+}
+html body .about-confidence-points article>span,
+html body .care-points article>span{
+  transition:color .48s ease,transform .56s var(--polish-ease);display:block;
+}
+html body .about-confidence-points article h3,
+html body .care-points article h3{
+  transition:color .48s ease,letter-spacing .55s var(--polish-ease)!important;
+}
+@media (hover:hover) and (pointer:fine){
+ html body .about-confidence-points article:hover,
+ html body .care-points article:hover{
+   padding:22px 15px!important;background-size:100% 100%!important;
+   background-color:rgba(255,253,250,.25)!important;
+   border-color:rgba(202,180,162,.58)!important;
+   box-shadow:0 9px 24px rgba(72,49,36,.058)!important;transform:none!important;
+ }
+ html body .about-confidence-points article:hover::after,
+ html body .care-points article:hover::after{transform:scaleY(1)}
+ html body .about-confidence-points article:hover>span,
+ html body .care-points article:hover>span{transform:translateY(-2px);color:#7b5845}
+ html body .about-confidence-points article:hover h3,
+ html body .care-points article:hover h3{color:#715140!important;letter-spacing:.015em}
+}
+/* About and other storytelling cards receive soft responses, not forced interactions. */
+html body .value-card,
+html body .story-stats>div,
+html body .account-benefits>div,
+html body .lab7-media-card{
+ transition:transform .55s var(--polish-ease),border-color .52s ease,box-shadow .52s ease,background-color .52s ease!important;
+}
+@media(hover:hover) and (pointer:fine){
+ html body .value-card:hover{transform:translateY(-3px)!important;box-shadow:0 13px 27px rgba(68,49,37,.07)!important;border-color:#d9c4b3!important}
+ html body .story-stats>div:hover{transform:translateY(-2px)!important}
+ html body .account-benefits>div:hover{transform:translateY(-2px)!important;box-shadow:0 10px 24px rgba(70,50,35,.06)!important}
+ html body .lab7-media-card:hover{transform:translateY(-2px)!important;box-shadow:0 15px 32px rgba(70,50,35,.07)!important}
+ html body .features-section .feature-card:hover{transform:translateY(-3px)!important;box-shadow:0 14px 28px rgba(77,55,43,.075)!important;background-color:#fbf7f3!important}
+}
+/* Testimonial slider: prominent tactile feedback without keeping a card selected.
+   Uses the existing transform-based page carousel with 9 authored cards. */
+html body .reviews-grid.is-smooth-carousel .review-card{
+  position:relative;overflow:hidden;cursor:default;
+  transition:transform .55s var(--polish-ease),background-color .6s ease,border-color .6s ease,box-shadow .6s ease!important;
+  transform:translateY(0) scale(1)!important;
+  background:#fffdfb!important;
+  border:1px solid #e7ded6!important;
+  box-shadow:0 5px 16px rgba(61,43,32,.045)!important;
+}
+html body .reviews-grid.is-smooth-carousel .review-card::before{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(300px circle at var(--glow-x,50%) var(--glow-y,55%),rgba(217,189,169,.18),transparent 75%);
+  opacity:0;transition:opacity .62s ease;
+}
+html body .reviews-grid.is-smooth-carousel .review-card>*{position:relative;z-index:1}
+html body .reviews-grid.is-smooth-carousel .review-card .stars,
+html body .reviews-grid.is-smooth-carousel .review-card .avatar-placeholder{
+  transition:transform .5s var(--polish-ease),color .5s ease,background-color .5s ease!important;
+}
+@media(hover:hover) and (pointer:fine){
+ html body .reviews-grid.is-smooth-carousel .review-card:hover{
+   transform:translateY(-5px) scale(1.006)!important;
+   border-color:#d4b8a4!important;
+   box-shadow:0 20px 32px rgba(69,46,33,.115)!important;
+   background:#fffdfb!important;
+ }
+ html body .reviews-grid.is-smooth-carousel .review-card:hover::before{opacity:1}
+ html body .reviews-grid.is-smooth-carousel .review-card:hover .stars{transform:translateY(-2px);color:#ae8062}
+ html body .reviews-grid.is-smooth-carousel .review-card:hover .avatar-placeholder{transform:scale(1.065);background:#e1cdbd!important}
+}
+/* Slider navigation shows state transitions and a discreet real timer. */
+.reviews-section .review-toolbar{gap:clamp(12px,2vw,24px)}
+.reviews-section .review-arrow{
+  position:relative;overflow:hidden;
+  transition:background-color .4s ease,color .4s ease,border-color .4s ease,box-shadow .42s ease,transform .4s var(--polish-ease)!important;
+}
+@media(hover:hover) and (pointer:fine){
+ .reviews-section .review-arrow:hover{background:#554035!important;color:#fff!important;border-color:#554035!important;box-shadow:0 9px 18px rgba(80,49,32,.15)!important;transform:translateY(-2px)}
+}
+.reviews-section .review-arrow:active{transform:scale(.94)!important}
+.reviews-section .review-dot{position:relative;cursor:pointer}
+.reviews-section .review-dot>span{background:#d5c2b2!important;transition:background .4s,width .4s var(--polish-ease)!important}
+.reviews-section .review-dot.is-active>span{background:#94715a!important}
+.reviews-section .review-dot::after{
+ content:"";position:absolute;left:50%;bottom:3px;width:18px;height:2px;
+ background:#b99a83;transform:translateX(-50%) scaleX(0);transform-origin:center;transition:transform .3s ease;
+}
+@media(hover:hover){.reviews-section .review-dot:hover::after{transform:translateX(-50%) scaleX(1)}}
+.reviews-section .review-card-nav-hint{color:#977e6a;font-size:11px;text-align:center;margin-top:7px}
+@media(max-width:480px){.reviews-section .review-toolbar{gap:6px!important}}
+/* Quote and section intros gain discreet visual interest on entry, not distracting loops. */
+.quote-inner .quote-mark{display:inline-block;transition:transform .7s var(--polish-ease),color .6s ease}
+.quote-inner:hover .quote-mark{transform:translateY(-7px) rotate(-5deg);color:#b18e75}
+.quote-inner blockquote{transition:color .7s ease}
+.quote-inner:hover blockquote{color:#524036}
+.section-title-center h2,.catalog-header h2,.about-faq-intro h2{transition:color .6s ease}
+.section-title-center:hover h2,.catalog-header:hover h2,.about-faq-intro:hover h2{color:#5d4636}
+/* Preserve functional overlay card and subtle button from v9. */
+html body .product-card .product-image-box .quick-view{transition:opacity .5s var(--polish-ease),transform .5s var(--polish-ease),background-color .4s ease,border-color .4s ease,box-shadow .4s ease!important}
+@media(prefers-reduced-motion:reduce){
+ html body .about-confidence-points article,html body .care-points article,html body .reviews-grid.is-smooth-carousel .review-card,
+ .reviews-section .review-arrow{transition:none!important;animation:none!important;transform:none!important}
+}
+
+/* The three About benefits are useful, accessible shortcuts, not fake detail cards. */
+html body .about-confidence-points article{padding-right:52px!important}
+html body .about-confidence-points article:hover{padding-right:52px!important}
+html body .about-confidence-points .confidence-action{
+ position:absolute;right:8px;top:50%;transform:translateY(-50%);
+ display:inline-flex;align-items:center;justify-content:center;
+ width:42px;height:42px;min-width:42px;min-height:42px;padding:0;
+ border:1px solid transparent;border-radius:50%;background:transparent;
+ font:400 18px/1 var(--heading);color:#9b7f6c;text-decoration:none;cursor:pointer;
+ opacity:.72;transition:color .45s ease,background .45s ease,border-color .45s ease,transform .45s var(--polish-ease),opacity .45s ease!important;
+}
+@media(hover:hover) and (pointer:fine){
+ html body .about-confidence-points article:hover .confidence-action,
+ html body .about-confidence-points .confidence-action:hover{opacity:1;background:#f7efe8;border-color:#d7bba7;color:#614736;transform:translateY(-50%) scale(1.06)}
+}
+@media(max-width:700px){html body .about-confidence-points .confidence-action{opacity:1;right:1px;background:#f8f3ee;border-color:#e4d6c9}}
+@media(prefers-reduced-motion:reduce){html body .about-confidence-points .confidence-action{transition:none!important}}
+
+/* v12: clickable, accessible account shortcuts */
+html body .account-benefits .account-benefit-link{
+ appearance:none;-webkit-appearance:none;width:100%;display:flex;align-items:center;gap:14px;min-height:60px;
+ padding:11px 13px;margin:0;background:rgba(255,255,255,.63);border:1px solid #e9e1da;
+ border-radius:4px;color:#332b27;text-align:left;text-decoration:none;cursor:pointer;
+ font:400 12px/1.55 var(--body);
+ transition:background-color .35s ease,border-color .35s ease,box-shadow .35s ease,transform .35s ease,color .35s ease;
+}
+html body .account-benefits .account-benefit-link i{
+ display:grid;place-items:center;flex:0 0 37px;width:37px;height:37px;
+ border-radius:50%;border:0;background:#f4eae2;color:#8c725f;
+ transition:background-color .35s ease,color .35s ease;
+}
+html body .account-benefits .account-benefit-text{flex:1;min-width:0;}
+html body .account-benefits .account-benefit-arrow{font-size:17px;line-height:1;color:#977963;opacity:.65;transition:transform .35s ease,opacity .35s ease;}
+html body .account-benefits .account-benefit-link:is(:hover,:focus-visible){
+ background:#fffdfb;border-color:#cbb09c;box-shadow:0 10px 22px rgb(76 51 33 / 7%);
+ transform:translateY(-2px);color:#614631;
+}
+html body .account-benefits .account-benefit-link:is(:hover,:focus-visible) .account-benefit-arrow{transform:translate(2px,-2px);opacity:1;}
+html body .account-benefits .account-benefit-link:focus-visible{outline:2px solid #ad8c73;outline-offset:3px;}
+html body .account-benefits .account-benefit-link:active{transform:translateY(0);}
+@media(prefers-reduced-motion:reduce){html body .account-benefits .account-benefit-link,html body .account-benefits .account-benefit-arrow{transition:none!important;transform:none!important;}}

@@ -1,0 +1,169 @@
+/* Lumiere v9 – a graceful quick-view overlay, consistent across existing and new dresses.
+   Load AFTER final-refinements.css. This intentionally overrides legacy button placement. */
+html body .product-card .product-image-box {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transition: outline-color .55s ease, box-shadow .55s ease, background-color .55s ease !important;
+}
+html body .product-card .product-image-box::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 35%;
+  background: linear-gradient(0deg, rgba(48,35,27,.14) 0%, rgba(48,35,27,0) 100%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity .6s cubic-bezier(.2,.75,.2,1);
+}
+html body .product-card .product-image-box > .quick-view-row {
+  position: absolute !important;
+  left: 10px !important;
+  right: 10px !important;
+  bottom: clamp(11px,2vw,18px) !important;
+  top: auto !important;
+  z-index: 3;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: auto !important;
+  min-height: 43px;
+  padding: 0 !important;
+  margin: 0 !important;
+  pointer-events: none;
+}
+html body .product-card .product-image-box .quick-view {
+  position: relative !important;
+  inset: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 7px;
+  width: auto !important;
+  min-width: 160px !important;
+  max-width: calc(100% - 12px) !important;
+  margin: 0 !important;
+  padding: 11px 19px !important;
+  border: 1px solid rgba(225,211,199,.82) !important;
+  border-radius: 6px !important;
+  background: rgba(255,251,247,.90) !important;
+  color: #574337 !important;
+  font: 500 11px/1.4 var(--body) !important;
+  letter-spacing: .025em !important;
+  text-transform: none !important;
+  text-decoration: none !important;
+  text-shadow: none !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 5px 22px rgba(46,32,23,.08) !important;
+  filter: none !important;
+  visibility: visible !important;
+  opacity: 0 !important;
+  transform: translateY(12px) !important;
+  scale: 1 !important;
+  pointer-events: none !important;
+  cursor: pointer;
+  transition: opacity .45s cubic-bezier(.2,.7,.2,1),
+              transform .6s cubic-bezier(.22,.7,.22,1),
+              background-color .4s ease,
+              border-color .4s ease,
+              color .4s ease,
+              box-shadow .4s ease !important;
+}
+html body .product-card .product-image-box .quick-view::before {
+  content: none !important;
+  display: none !important;
+}
+html body .product-card .product-image-box .quick-view::after {
+  content: '↗' !important;
+  position: static !important;
+  display: inline-block !important;
+  margin-left: 0 !important;
+  background: none !important;
+  border: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  color: #947760;
+  font: 500 13px/1 var(--body);
+  transition: transform .35s ease !important;
+}
+@media (hover:hover) and (pointer:fine) {
+  html body .product-card:is(:hover,:focus-within) .product-image-box .quick-view,
+  html body .product-card .product-image-box .quick-view:focus-visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    pointer-events: auto !important;
+  }
+  html body .product-card:hover .product-image-box::after {opacity: 1;}
+  html body .product-card:hover .product-image-box,
+  html body .product-card:focus-within .product-image-box {
+    outline-color: rgba(184,158,136,.32) !important;
+    box-shadow: 0 9px 25px rgba(60,45,37,.08) !important;
+  }
+  html body .product-card:hover .product-image-box > img,
+  html body .catalog-products .product-card:hover .product-image-box > img {
+    transform: scale(1.012) !important;
+    filter: brightness(.992) !important;
+  }
+  html body .product-card .product-image-box .quick-view:hover {
+    background: rgba(255,251,247,.98) !important;
+    border-color: #c7af9d !important;
+    color: #3d2e26 !important;
+    box-shadow: 0 9px 25px rgba(55,38,27,.14) !important;
+  }
+  html body .product-card .product-image-box .quick-view:hover::after {transform:translate(2px,-2px) !important;}
+  /* A mouse click shouldn't keep hover overlay visible when the modal closes. */
+  html body .product-card:not(:hover) .product-image-box .quick-view:not(:focus-visible) {
+    opacity: 0 !important;
+    transform: translateY(12px) !important;
+    pointer-events: none !important;
+  }
+}
+html body .product-card .product-image-box .quick-view:focus-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  pointer-events: auto !important;
+  outline: 2px solid #927259 !important;
+  outline-offset: 3px !important;
+}
+html body .product-card .product-image-box .quick-view:active {
+  transform: translateY(1px) scale(.985) !important;
+}
+@media (hover:none), (pointer:coarse) {
+  html body .product-card .product-image-box .quick-view {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    pointer-events: auto !important;
+    min-height: 40px !important;
+    padding: 10px 14px !important;
+    background: rgba(255,251,247,.94) !important;
+  }
+  html body .product-card .product-image-box::after {opacity: .35;}
+}
+/* Compact two-column catalog: keep the call-to-action entirely inside the photo. */
+@media (max-width: 520px) {
+  html body .product-card .product-image-box > .quick-view-row {
+    left: 7px !important; right: 7px !important;
+    bottom: 9px !important; min-height: 36px;
+  }
+  html body .product-card .product-image-box .quick-view {
+    width: 100% !important; min-width: 0 !important;
+    max-width: 100% !important; min-height: 36px !important;
+    padding: 8px 5px !important;
+    gap: 4px !important; white-space: nowrap;
+    font-size: clamp(8.5px, 2.55vw, 10px) !important;
+  }
+  html body .product-card .product-image-box .quick-view::after {font-size: 11px !important;}
+}
+@media (prefers-reduced-motion:reduce) {
+  html body .product-card .product-image-box .quick-view,
+  html body .product-card .product-image-box::after,
+  html body .product-card .product-image-box > img {
+    transition: none !important;
+    animation: none !important;
+  }
+}

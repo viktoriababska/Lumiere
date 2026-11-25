@@ -1,0 +1,10 @@
+/* LAB 10 — subtle typing and erasing effect for Lumiere hero. */
+.hero-typewriter{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;min-height:1.8rem;margin:1.15rem 0 1.25rem;font-size:clamp(.72rem,.82vw,.85rem);line-height:1.5;letter-spacing:.035em;color:var(--text, #2b2826);opacity:.88}
+.hero-typewriter__prefix{font-size:.7em;letter-spacing:.17em;font-weight:700;color:#b58c79;white-space:nowrap}
+.hero-typewriter__text{display:inline;overflow-wrap:anywhere}
+.hero-typewriter__cursor{height:1em;flex:0 0 1px;background:currentColor;animation:lumiere-caret 1s steps(1,end) infinite}
+@keyframes lumiere-caret{50%{opacity:0}}
+html[data-theme="dark"] .hero-typewriter,html.dark .hero-typewriter{color:#f0e9e4}
+html[data-theme="dark"] .hero-typewriter__prefix,html.dark .hero-typewriter__prefix{color:#d5ad96}
+@media(prefers-reduced-motion:reduce){.hero-typewriter__cursor{animation:none;opacity:.7}}
+@media(max-width:600px){.hero-typewriter{font-size:.73rem;gap:.3rem;margin:.8rem 0 1rem;min-height:2.25rem}}

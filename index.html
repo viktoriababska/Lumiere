@@ -43,6 +43,7 @@
 <script defer src="js/theme.js?v=1"></script>
 <link rel="stylesheet" href="css/hero-video.css?v=1"/>
 <script defer src="js/hero-video.js?v=1"></script>
+<link href="css/typewriter.css" rel="stylesheet">
 </head>
 <body>
 <a class="skip-link" href="#main-content">Перейти до основного вмісту</a>
@@ -132,6 +133,11 @@
 <p class="hero-desc">
        Поєднуємо витончений дизайн, якісні тканини та технологічний підбір розміру для вашого комфорту.
       </p>
+<!-- LAB 10: плавний текстовий віджет із ефектом друкування / видалення. -->
+<div class="hero-typewriter" data-typewriter aria-label="Кожна подія заслуговує на особливий образ">
+  <span class="hero-typewriter__prefix">LUMIERE /</span>
+  <span class="hero-typewriter__text" data-typewriter-text aria-hidden="true">Кожна подія заслуговує на особливий образ</span><span class="hero-typewriter__cursor" aria-hidden="true"></span>
+</div>
 <div class="hero-actions">
 <a class="btn btn-dark" href="catalog.html">
         Дивитись колекцію ↗
@@ -645,5 +651,6 @@
 </div>
 <div aria-atomic="true" aria-live="polite" class="toast-region">
 </div>
+<script src="js/typewriter.js" defer></script>
 </body>
 </html>
